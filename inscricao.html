@@ -7,41 +7,15 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <link rel="stylesheet" href="css/bootstrap.css">
+
     <link rel="stylesheet" href="css/default.css">
 
     <link rel="stylesheet" href="css/header.css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-
     <title>Projeto Integrador</title>
 </head>
 <body>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                          <label for="inputEmail" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputPassword" class="form-label">Senha</label>
-                          <input type="password" class="form-control" id="inputPassword">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Entrar na Conta</button>
-                        <div class="form-text">Esqueceu seu email ou senha? Clique <a href="#">aqui</a></div>
-                      </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <header>
         <nav class="navbar" id="navbar">
@@ -51,7 +25,7 @@
 
             <div class="navbar--links">
                 <a href="#">
-                    <div class="links">Home<span class="link--linha"></span></div>
+                    <div class="link">Home<span class="link--linha"></span></div>
                 </a>
                 <a href="#">
                     <div class="link">Cardápio<span class="link--linha"></span></div>
@@ -70,7 +44,7 @@
                         <span class="notificacao">1</span>
                     </i>
                 </a>
-                <a href="#">
+                <a href="inscricao.html">
                     <div class="link active">Cadastre-se<span class="link--linha"></span></div>
                 </a>
                 <a href="#">
@@ -79,6 +53,7 @@
             </div>
         </nav>
     </header>
+
     <section class ="container">
         <h1 class ="my-5">Cadastre-se</h1>
         <div class="col-md-7">
@@ -93,14 +68,14 @@
                 </div>
                 <div class="col-md-4">
                     <label for="inputCpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="inputCpf" placeholder="XXX.XXX.XXX-XX">
+                    <input type="text" class="form-control" id="inputCpf">
                 </div>
                 <div class="col-12">
                   <label for="inputEmail" class="form-label">Email</label>
                   <input type="email" class="form-control" id="inputEmail">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputUsuario" class="form-label">Usuario</label>
+                  <label for="inputUsuario" class="form-label">Usuário</label>
                   <input type="text" class="form-control" id="inputUsuario">
                 </div>
                 <div class="col-md-6">
@@ -116,25 +91,58 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Cadastre-se</button>
+                  <button type="submit" class="btn modal--btnLogar">Cadastre-se</button>
                 </div>
               </form>
         </div>
-
-
-          <div class="col-md-5">
-              <img src="mg/11-KARLA-Senac-Pato-Branco-inicia-sua-primeira-turma-do-programa-Melhor-Aprendiz-Tech-01.jpeg" alt="turma aprendiz tech" style="max-width: 100px;">
-          </div>
     </section>
 
-    
+        <!-- Modal -->
+    <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-anim">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control modal--email" id="inputEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control modal--senha" id="inputPassword">
+                            <div class="form-check modal--checkbox">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" oninput="mostraSenha()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Mostrar Senha
+                            </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn modal--btnLogar" onclick="validaCampos()">Entrar na Conta</button>
+                        <div class="form-text modal--esqueciSenha">Esqueceu seu email ou senha? <a href="#">Clique aqui</a></div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    
+    <script src="js/scriptFrontEnd.js"></script>
 
-    <script src="js/script.js"></script>
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+
     <script type="text/javascript" src="JS/popper.min.js"></script>
+
     <script type="text/javascript" src="JS/bootstrap.js"></script>
+
     <script type="text/javascript" src="JS/app.js"></script>
+
+    <script>
+        $('#inputCpf').mask('000.000.000-00')
+    </script>
 </body>
 </html>
