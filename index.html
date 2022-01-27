@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/default.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <title>Projeto Integrador</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="#">
+                <div class="logo"><i class="fas fa-utensils"></i></div>
+            </a>
+
+            <div class="navbar--links">
+                <a href="#">
+                    <div class="link active">Home<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Cardápio<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Sobre<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Contato<span class="link--linha"></span></div>
+                </a>
+            </div>
+
+            <div class="navbar--login">
+                <a href="#">
+                    <i class="fas fa-shopping-cart carrinho">
+                        <span class="notificacao">1</span>
+                    </i>
+                </a>
+                <a href="#">
+                    <div class="link">Cadastre-se<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    
+    <!-- Modal -->
+    <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-anim">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="inputEmail" class="form-label">Email</label>
+                          <input type="email" class="form-control modal--email" id="inputEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputPassword" class="form-label">Senha</label>
+                          <input type="password" class="form-control modal--senha" id="inputPassword">
+                          <div class="form-check modal--checkbox">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" oninput="mostraSenha()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Mostrar Senha
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn modal--btnLogar" onclick="validaCampos()">Entrar na Conta</button>
+                        <div class="form-text modal--esqueciSenha">Esqueceu seu email ou senha? <a href="#">Clique aqui</a></div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/scriptFrontEnd.js"></script>
+
+    <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
+
+    <script type="text/javascript" src="JS/popper.min.js"></script>
+
+    <script type="text/javascript" src="JS/bootstrap.js"></script>
+
+    <script type="text/javascript" src="JS/app.js"></script>
+
+</body>
+</html>
