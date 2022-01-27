@@ -27,3 +27,6 @@ def select_the_probe(email, senha):
 def update_probe(email, senha):
     recebe_dados = request.json
     return jsonify(a)
+
+
+######## teste kkkkkkkkkkk
