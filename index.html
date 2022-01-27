@@ -5,43 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="css/bootstrap.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="stylesheet" href="css/default.css">
 
     <link rel="stylesheet" href="css/header.css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-
     <title>Projeto Integrador</title>
 </head>
 <body>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                          <label for="inputEmail" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputPassword" class="form-label">Senha</label>
-                          <input type="password" class="form-control" id="inputPassword">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Entrar na Conta</button>
-                        <div class="form-text">Esqueceu seu email ou senha? Clique <a href="#">aqui</a></div>
-                      </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <header>
         <nav class="navbar" id="navbar">
@@ -81,13 +55,47 @@
     </header>
 
     
-
-    
+    <!-- Modal -->
+    <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-anim">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="inputEmail" class="form-label">Email</label>
+                          <input type="email" class="form-control modal--email" id="inputEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputPassword" class="form-label">Senha</label>
+                          <input type="password" class="form-control modal--senha" id="inputPassword">
+                          <div class="form-check modal--checkbox">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" oninput="mostraSenha()">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Mostrar Senha
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn modal--btnLogar" onclick="validaCampos()">Entrar na Conta</button>
+                        <div class="form-text modal--esqueciSenha">Esqueceu seu email ou senha? <a href="#">Clique aqui</a></div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
+
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
+
     <script type="text/javascript" src="JS/popper.min.js"></script>
+
     <script type="text/javascript" src="JS/bootstrap.js"></script>
+
     <script type="text/javascript" src="JS/app.js"></script>
+
 </body>
 </html>

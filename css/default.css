@@ -19,7 +19,7 @@
 }
 
 a {
-    color: unset;
+    color: var(--cor04);
     text-decoration: none;
 }
 

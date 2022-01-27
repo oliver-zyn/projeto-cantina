@@ -21,7 +21,7 @@ header {
     border-radius: 50%;
     font-size: 1.2rem;
     color: #fff;
-    padding: 10px 14px;
+    padding: 10px 16px;
     box-shadow: 4px 4px 8px #c5c5c5bd,
     -4px -4px 8px #ffffff;;
 }
@@ -73,7 +73,7 @@ header {
     background: linear-gradient(45deg, #494949, #000000);
     color: #fff;
     margin-left: 1rem;
-    padding: 10px 20px;
+    padding: 10px 27px;
     border-radius: 5px;
     box-shadow: 4px 4px 8px #c5c5c5bd,
     -4px -4px 8px #ffffff;
@@ -85,6 +85,7 @@ header {
     box-shadow: 1px 1px 10px #c5c5c54b,
     -4px -4px 8px #ffffff;
     position: relative;
+    color: var(--cor04);
 }
 
 .carrinho:hover {
@@ -107,6 +108,66 @@ header {
     background: red;
     color: #fff;
     font-size: 0.7rem;
+}
+
+.modal-anim {
+    opacity: 0;
+    animation: modal-anim .8s forwards ease;
+}
+
+.modal--btnLogar {
+    background: var(--cor04);
+    width: 100%;
+    color: #fff;
+    padding: 7px;
+}
+
+.modal--btnLogar:hover {
+    transition: background .3s;
+    color: #fff;
+    background: #15212c;
+}
+
+.modal--esqueciSenha {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modal--esqueciSenha > a {
+    text-decoration: none;
+}
+
+.modal--esqueciSenha > a:hover {
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+.modal--checkbox {
+    margin-top: 10px;
+    font-size: .9rem;
+}
+
+.modal--checkbox > input {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.modal--checkbox > label {
+    margin-top: 4px;
+}
+
+@keyframes modal-anim {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes link-anim {
