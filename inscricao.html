@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/default.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <title>Projeto Integrador</title>
+</head>
+<body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="inputEmail" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputPassword" class="form-label">Senha</label>
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar na Conta</button>
+                        <div class="form-text">Esqueceu seu email ou senha? Clique <a href="#">aqui</a></div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="#">
+                <div class="logo"><i class="fas fa-utensils"></i></div>
+            </a>
+
+            <div class="navbar--links">
+                <a href="#">
+                    <div class="links">Home<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Cardápio<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Sobre<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="link">Contato<span class="link--linha"></span></div>
+                </a>
+            </div>
+
+            <div class="navbar--login">
+                <a href="#">
+                    <i class="fas fa-shopping-cart carrinho">
+                        <span class="notificacao">1</span>
+                    </i>
+                </a>
+                <a href="#">
+                    <div class="link active">Cadastre-se<span class="link--linha"></span></div>
+                </a>
+                <a href="#">
+                    <div class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <section class ="container">
+        <h1 class ="my-5">Cadastre-se</h1>
+        <div class="col-md-7">
+            <form class="row g-3">
+                <div class="col-md-4">
+                  <label for="inputNome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="inputNome">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputSobrenome" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="inputSobrenome">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputCpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="inputCpf" placeholder="XXX.XXX.XXX-XX">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputUsuario" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" id="inputUsuario">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputSenha" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="inputSenha">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Li e concordo com os <a href="#">termos de uso </a>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Cadastre-se</button>
+                </div>
+              </form>
+        </div>
+
+
+          <div class="col-md-5">
+              <img src="mg/11-KARLA-Senac-Pato-Branco-inicia-sua-primeira-turma-do-programa-Melhor-Aprendiz-Tech-01.jpeg" alt="turma aprendiz tech" style="max-width: 100px;">
+          </div>
+    </section>
+
+    
+
+    
+
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="JS/popper.min.js"></script>
+    <script type="text/javascript" src="JS/bootstrap.js"></script>
+    <script type="text/javascript" src="JS/app.js"></script>
+</body>
+</html>
