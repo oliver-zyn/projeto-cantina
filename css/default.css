@@ -26,8 +26,6 @@ a {
 body, html {
     background: #fafafd;
     scroll-behavior: smooth;
-    position: relative;
-    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
