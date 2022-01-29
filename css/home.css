@@ -1,35 +1,44 @@
-.intro {
-    height: calc(100vh - 84px);
+.home {
+    padding: 0px 8%;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    min-height: calc(100vh - 84px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    padding: 0 90px;
+    gap: 1.5rem;
 }
 
-.intro--text {
-    width: 50%;
+.home--img {
+    opacity: 0;
+    animation: img-anim .8s .6s forwards ease-in-out;
+}
+
+.home--img img {
+    width: 100%;
+}
+
+.home--text {
     opacity: 0;
     animation: text-anim .8s .6s forwards ease-in-out;
 }
 
-.intro--text span {
+.home--text span {
     color: var(--cor04);
     margin-left: 5px;
 }
 
-.intro--text span i {
+.home--text span i {
     color: var(--cor02);
     margin-right: 5px;
 }
 
-.intro--text h1 {
+.home--text h1 {
     font-size: 4rem;
     font-weight: bolder;
     color: var(--cor04);
 }
 
-.intro--text p {
+.home--text p {
     width: 70%;
     margin: 7px;
     color: #00000088;
@@ -76,17 +85,74 @@
     padding-bottom: 4px;
 }
 
-.intro--img {
-    opacity: 0;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: img-anim .8s .6s forwards ease-in-out;
+@media (max-width: 921px) {
+    .home--text h1 {
+        font-size: 3rem;
+    }
+
+    .home--text h2 {
+        font-size: 1.7rem;
+    }
 }
 
-.intro--img img {
-    width: 85%;
+@media (max-width: 768px) {
+    .home {
+        padding: 50px 6%;
+    }
+}
+
+@media (max-width: 715px) {
+    .home {
+        grid-template-columns: 1fr;
+    }
+    .home--text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home--text h1 {
+        font-size: 4rem;
+    }
+
+    .home--text h2 {
+        font-size: 2.24rem;
+    }
+
+    .home--img {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .home--img img {
+        width: 75%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .home--text h1 {
+        font-size: 3rem;
+    }
+
+    .home--text h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 355px) {
+
+    .btnComprarAgora {
+        color: #fff;
+        padding: 10px 20px;
+    }
+    
+    .btnVerCardapio {
+        padding-bottom: 4px;
+    }
 }
 
 @keyframes text-anim {

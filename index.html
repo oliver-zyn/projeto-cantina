@@ -13,18 +13,20 @@
 
     <link rel="stylesheet" href="css/header.css">
 
-    <link rel="stylesheet" href="css/introducao.css">
+    <link rel="stylesheet" href="css/home.css">
 
     <title>Projeto Integrador</title>
 </head>
 <body>
 
     <header>
+        <a href="#">
+            <div class="logo"><i class="fas fa-utensils"></i></div>
+        </a>
+        <button class="navbar--btnMobile" id="navbar--btnMobile">
+            <span class="btnMobile--icon"></span>
+        </button>
         <nav class="navbar" id="navbar">
-            <a href="#">
-                <div class="logo"><i class="fas fa-utensils"></i></div>
-            </a>
-
             <div class="navbar--links">
                 <a href="#">
                     <div class="link active">Home<span class="link--linha"></span></div>
@@ -56,16 +58,18 @@
         </nav>
     </header>
 
-    <section class="intro">
-        <div class="intro--text">
+    <section class="home" id="home">
+        <div class="home--text">
             <span><i class="fas fa-hamburger"></i> Frase de efeito</span>
             <h1>Cantina do Senac</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error voluptatum.</p>
-            <a href="#" class="btnComprarAgora">Comprar agora</a>
-            <a href="#" class="btnVerCardapio">Ver Cardápio</a>
+            <div>
+                <a href="#" class="btnComprarAgora">Comprar agora</a>
+                <a href="#" class="btnVerCardapio">Ver Cardápio</a>
+            </div>
         </div>
-        <div class="intro--img">
-            <img src="images/comidaTeste2.png" alt="comida1">
+        <div class="home--img">
+            <img src="images/comidaTeste2.png" alt="img">
         </div>
     </section>
 
@@ -104,6 +108,8 @@
     </div>
 
     <script src="js/scriptFrontEnd.js"></script>
+
+    <script src="js/btn-mobile.js"></script>
 
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 

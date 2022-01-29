@@ -1,24 +1,17 @@
 header {
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     width: 100%;
+    padding: 15px 100px 10px 100px;
     z-index: 999;
     background: #fafafdcb;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(5px);
-    padding: 0px 15px;
     animation: header-anim .8s forwards ease-in-out;
-}
-
-.navbar {
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    margin: 0 50px;
-    font-size: 0.95rem;
 }
 
 .logo {
@@ -26,15 +19,25 @@ header {
     border-radius: 50%;
     font-size: 1.2rem;
     color: #fff;
-    padding: 10px 16px;
+    padding: 10px 17px;
     box-shadow: 4px 4px 8px #c5c5c5bd,
     -4px -4px 8px #ffffff;;
 }
 
-.navbar--links, .navbar--login {
+.navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: 90%;
+}
+
+.navbar--links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar--login {
+    display: flex;
+    align-items: center;
 }
 
 .link {
@@ -120,6 +123,8 @@ header {
     font-size: 0.7rem;
 }
 
+/* MODAL */
+
 .modal-anim {
     opacity: 0;
     animation: modal-anim .8s forwards ease;
@@ -166,6 +171,110 @@ header {
 
 .modal--checkbox > label {
     margin-top: 4px;
+}
+
+/* BOTÃO MOBILE */
+
+.navbar--btnMobile {
+    display: none;
+  }
+
+@media (max-width: 1081px) {
+    .navbar--btnMobile {
+        display: initial;
+    }
+
+    header {
+        padding-bottom: 15px;
+    }
+
+    header .navbar {
+        width: auto;
+        position: absolute;
+        top: -420px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+        background: #fafafdef;
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 4px 4px 8px #c5c5c5bd;
+        transition: .2s ease;
+    }
+
+    .navbar.active {
+        top: 120%;
+    }
+
+    .navbar--links{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .navbar--login {
+        padding: 15px 0 10px 0;
+        border-top: 1px solid #c5c5c5bd;
+    }
+
+    .navbar .link {
+        margin: .5rem 0;
+        padding: 1rem;
+        display: block;
+    }
+
+    .navbar .cadastro {
+        padding: .7rem .6rem;
+        margin: 0 20px;
+    }
+
+    .navbar--btnMobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--cor04);
+        text-shadow: 0 0 2px #fff;
+        gap: 0.5rem;
+      }
+    
+      .btnMobile--icon {
+        display: block;
+        border-top: 2px solid var(--cor04);
+        width: 20px;
+      }
+    
+      .btnMobile--icon::after,
+      .btnMobile--icon::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: blue;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+      }
+    
+      .navbar--btnMobile.active .btnMobile--icon {
+        border-top-color: transparent;
+      }
+    
+      .navbar--btnMobile.active .btnMobile--icon::before {
+        transform: rotate(135deg);
+      }
+    
+      .navbar--btnMobile.active .btnMobile--icon::after {
+        transform: rotate(-135deg);
+        top: -7px;
+      }
 }
 
 @keyframes header-anim {
