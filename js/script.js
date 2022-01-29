@@ -1,5 +1,5 @@
 function api (){
-    const baseURL = 'http://127.0.0.1:5000/server'
+    const baseURL = 'http://127.0.0.1:5000/loguin'
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -8,7 +8,7 @@ function api (){
     const url = `${baseURL}`;
   // 
     async function createLoguin (email, senha) {
-        const request = await fetch(url, {
+        const request = await fetch(`${url}/${email}/${senha}`, {
     
           headers: {
           'Accept': 'application/json',
@@ -19,7 +19,7 @@ function api (){
         return await request.json();        
     } 
     async function verificaçãoDeLoguin (email, senha) {
-        const request = await fetch(url, {
+        const request = await fetch(`${url}/${email}/${senha}`, {
     
           headers: {
           'Accept': 'application/json',
@@ -30,7 +30,7 @@ function api (){
         return await request.json();        
     } 
     async function novaSenhaDeLoguin (email, senha) {
-        const request = await fetch(url, {
+        const request = await fetch(`${url}/${email}/${senha}`, {
     
           headers: {
           'Accept': 'application/json',
@@ -82,24 +82,26 @@ function Store () {
   }
 
 
-  function ProbeStore () {
+  function LoguinStore () {
 
     const api = api ();
     const store = Store();
   
     async function  createLoguin (email, senha) {
       const loguin = await api.createLoguin(email, senha);
+      console.log(loguin)
       store.setAll(loguin);
-      console.log(loguin);
     }
   
     async function verificaçãoDeLoguin (email, senha) {
       const loguin= await api.verificaçãoDeLoguin;
+      console.log(loguin)
       store.setAll(loguin);
     }
   
     async function novaSenhaDeLoguin(email, senha) {
       const loguin = await api.novaSenhaDeLoguin();
+      console.log(loguin)
       store.update(loguin);
     }
   
@@ -108,4 +110,29 @@ function Store () {
         verificaçãoDeLoguin,
         novaSenhaDeLoguin
     }
+  }
+
+
+  async function tryCreateloguin (email, senha) {
+    try {
+      await LoguinStore.createLoguin(email, senha);
+    } catch (error) {
+      console.log(error)
+    }  
+  }
+
+  async function tryverificaçãoDeLoguin (email, senha) {
+    try {
+      await LoguinStore.verificaçãoDeLoguin  (email, senha);
+    } catch (error) {
+      console.log(error)
+    }  
+  }
+
+  async function tryCreateloguin (email, senha) {
+    try {
+      await LoguinStore.createLoguin(email, senha);
+    } catch (error) {
+      console.log(error)
+    }  
   }
