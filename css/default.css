@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     --cor01: #F8FEF9;
     --cor02: #FF6D21;
     --cor03: #FA9529;
     --cor04: #233545;
-    --cor05: #E6F9E7;
+    --cor05: #fafafd;
 }
 
 * {
@@ -15,6 +15,8 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    border: none;
+    outline: none;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
@@ -23,8 +25,13 @@ a {
     text-decoration: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 body, html {
-    background: #fafafd;
+    background: var(--cor05);
     scroll-behavior: smooth;
 }
 
@@ -33,7 +40,7 @@ body, html {
   }
   
   ::-webkit-scrollbar-track {
-    background: #fafafd;
+    background: var(--cor05);
     border-radius: 20px;
   }
   

@@ -51,8 +51,8 @@
                 <a href="inscricao.html">
                     <div class="link cadastro">Cadastre-se<span class="link--linha"></span></div>
                 </a>
-                <a href="#">
-                    <div class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</div>
+                <a href="login.html">
+                    <div class="login">Login</div>
                 </a>
             </div>
         </nav>
@@ -72,42 +72,6 @@
             <img src="images/comidaTeste2.png" alt="img">
         </div>
     </section>
-
-    <main style="height: 100vh; border-top: 1px solid black;"></main>
-
-    <!-- Modal -->
-    <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-anim">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                          <label for="inputEmail" class="form-label">Email</label>
-                          <input type="email" class="form-control modal--email" id="inputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputPassword" class="form-label">Senha</label>
-                          <input type="password" class="form-control modal--senha" id="inputPassword">
-                          <div class="form-check modal--checkbox">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" oninput="mostraSenha()">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Mostrar Senha
-                            </label>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn modal--btnLogar" onclick="validaCampos()">Entrar na Conta</button>
-                        <div class="form-text modal--esqueciSenha">Esqueceu seu email ou senha? <a href="#">Clique aqui</a></div>
-                      </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/scriptFrontEnd.js"></script>
 
     <script src="js/btn-mobile.js"></script>
 

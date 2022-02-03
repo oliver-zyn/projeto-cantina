@@ -18,11 +18,13 @@
 <body>
 
     <header>
+        <a href="#">
+            <div class="logo"><i class="fas fa-utensils"></i></div>
+        </a>
+        <button class="navbar--btnMobile" id="navbar--btnMobile">
+            <span class="btnMobile--icon"></span>
+        </button>
         <nav class="navbar" id="navbar">
-            <a href="#">
-                <div class="logo"><i class="fas fa-utensils"></i></div>
-            </a>
-
             <div class="navbar--links">
                 <a href="index.html">
                     <div class="link">Home<span class="link--linha"></span></div>
@@ -44,11 +46,11 @@
                         <span class="notificacao">1</span>
                     </i>
                 </a>
-                <a href="inscricao.html">
-                    <div class="link active cadastro">Cadastre-se<span class="link--linha"></span></div>
-                </a>
                 <a href="#">
-                    <div class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</div>
+                    <div class="link cadastro active">Cadastre-se<span class="link--linha"></span></div>
+                </a>
+                <a href="login.html">
+                    <div class="login">Login</div>
                 </a>
             </div>
         </nav>
@@ -62,25 +64,38 @@
                   <label for="inputNome" class="form-label">Nome</label>
                   <input type="text" class="form-control" id="inputNome">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <label for="inputSobrenome" class="form-label">Sobrenome</label>
                     <input type="text" class="form-control" id="inputSobrenome">
                 </div>
                 <div class="col-md-4">
-                    <label for="inputCpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="inputCpf">
+                    <label for="inputTel" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="inputTel">
                 </div>
-                <div class="col-12">
-                  <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail">
+                <div class="col-md-4">
+                    <label for="datalistEstados" class="form-label">Estado</label>
+                    <input class="form-control" list="datalistOptions" id="datalistEstados">
+                    <datalist id="datalistOptions">
+                        <option value="Paraná">
+                        <option value="Rio Grande do Sul">
+                        <option value="São Paulo">
+                    </datalist>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <label for="inputCidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="inputCidade">
+                </div>
+                <div class="col-md-4">
                   <label for="inputUsuario" class="form-label">Usuário</label>
                   <input type="text" class="form-control" id="inputUsuario">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <label for="inputSenha" class="form-label">Senha</label>
                   <input type="password" class="form-control" id="inputSenha">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputConfirmSenha" class="form-label">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="inputConfirmSenha">
                 </div>
                 <div class="col-12">
                   <div class="form-check">
@@ -91,45 +106,13 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn modal--btnLogar">Cadastre-se</button>
+                  <button type="submit" class="btn btn-dark">Cadastre-se</button>
                 </div>
               </form>
         </div>
     </section>
 
-        <!-- Modal -->
-    <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-anim">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLoginTitle">Entre na Sua Conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control modal--email" id="inputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputPassword" class="form-label">Senha</label>
-                            <input type="password" class="form-control modal--senha" id="inputPassword">
-                            <div class="form-check modal--checkbox">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" oninput="mostraSenha()">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Mostrar Senha
-                            </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn modal--btnLogar" onclick="validaCampos()">Entrar na Conta</button>
-                        <div class="form-text modal--esqueciSenha">Esqueceu seu email ou senha? <a href="#">Clique aqui</a></div>
-                        </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/scriptFrontEnd.js"></script>
+    <script src="js/btn-mobile.js"></script>
 
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 
@@ -142,7 +125,7 @@
     <script type="text/javascript" src="JS/app.js"></script>
 
     <script>
-        $('#inputCpf').mask('000.000.000-00')
+        $('#inputTel').mask('(00) 00000-0000')
     </script>
 </body>
 </html>
