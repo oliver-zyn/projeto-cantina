@@ -13,16 +13,20 @@
 
     <link rel="stylesheet" href="css/header.css">
 
+    <link rel="stylesheet" href="css/home.css">
+
     <title>Projeto Integrador</title>
 </head>
 <body>
 
     <header>
+        <a href="#">
+            <div class="logo"><i class="fas fa-utensils"></i></div>
+        </a>
+        <button class="navbar--btnMobile" id="navbar--btnMobile">
+            <span class="btnMobile--icon"></span>
+        </button>
         <nav class="navbar" id="navbar">
-            <a href="#">
-                <div class="logo"><i class="fas fa-utensils"></i></div>
-            </a>
-
             <div class="navbar--links">
                 <a href="#">
                     <div class="link active">Home<span class="link--linha"></span></div>
@@ -41,11 +45,11 @@
             <div class="navbar--login">
                 <a href="#">
                     <i class="fas fa-shopping-cart carrinho">
-                        <span class="notificacao">90</span>
+                        <span class="notificacao">1</span>
                     </i>
                 </a>
-                <a href="#">
-                    <div class="link" data-bs-toggle="modal" data-bs-target="#modalLogin">Cadastre-se<span class="link--linha"></span></div>
+                <a href="inscricao.html">
+                    <div class="link cadastro">Cadastre-se<span class="link--linha"></span></div>
                 </a>
                 <a href="#">
                     <div class="login" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</div>
@@ -54,7 +58,23 @@
         </nav>
     </header>
 
-    
+    <section class="home" id="home">
+        <div class="home--text">
+            <span><i class="fas fa-hamburger"></i> Frase de efeito</span>
+            <h1>Cantina do Senac</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error voluptatum.</p>
+            <div>
+                <a href="#" class="btnComprarAgora">Comprar agora</a>
+                <a href="#" class="btnVerCardapio">Ver Cardápio</a>
+            </div>
+        </div>
+        <div class="home--img">
+            <img src="images/comidaTeste2.png" alt="img">
+        </div>
+    </section>
+
+    <main style="height: 100vh; border-top: 1px solid black;"></main>
+
     <!-- Modal -->
     <div class="modal modal-anim" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginTitle" aria-hidden="true">
         <div class="modal-dialog">
@@ -87,9 +107,9 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-
     <script src="js/scriptFrontEnd.js"></script>
+
+    <script src="js/btn-mobile.js"></script>
 
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 
