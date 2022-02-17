@@ -13,7 +13,9 @@
 
     <link rel="stylesheet" href="css/header.css">
 
-    <link rel="stylesheet" href="css/loginOliver.css">
+    <link rel="stylesheet" href="css/form.css">
+
+    <link rel="stylesheet" href="css/login.css">
 
     <title>Teste de Login</title>
 </head>
@@ -65,24 +67,24 @@
             </div>
             <div class="login--inputs">
                 <h1>Entre na sua conta</h1>
-                <div class="email--box">
+                <div class="input--box">
                     <label for="inputEmail">Email</label>
-                    <input type="email" id="inputEmail" class="inputEmail" placeholder="Email" onchange="validaEmail()" maxlength="60">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email" onchange="validaEmail(this)" maxlength="60">
                     <i class="fas fa-check-circle ok" id="okEmail"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroEmail"></i>
-                    <span id="msgErroEmail">Mensagem de erro</span>
+                    <span id="msgErroEmail" class="msgErro">Mensagem de erro</span>
                 </div>
-                <div class="senha--box">
+                <div class="input--box">
                     <div class="text--senha">
                         <label for="inputSenha">Senha</label>
                         <a href="#modalEsqueciSenha" data-bs-toggle="modal" data-bs-target="#modalEsqueciSenha">Esqueci minha senha</a>
                     </div>
-                    <input type="password" id="inputSenha" class="inputSenha" placeholder="Senha" onchange="validaSenha()">
+                    <input type="password" id="inputSenha" class="form-control" placeholder="Senha" onchange="validaSenha(this)">
                     <i class="fas fa-check-circle ok" id="okSenha"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroSenha"></i>
-                    <span id="msgErroSenha">Mensagem de erro</span>
+                    <span id="msgErroSenha" class="msgErro">Mensagem de erro</span>
                 </div>
-                <button type="button" id="btnLogin" class="btnLogin">Entrar</button>
+                <button type="button" id="btnLogin" class="btnForm">Entrar</button>
                 <div class="linkCadastro">
                     <p>Não possui uma conta? <a href="inscricao.html">Cadastre-se</a></p>
                 </div>
@@ -105,7 +107,7 @@
                           <label for="inputEmailEsqueciASenha" class="form-label">Email</label>
                           <input type="email" class="form-control inputEmail" id="inputEmailEsqueciASenha" aria-describedby="emailHelp" placeholder="Email">
                         </div>
-                        <button type="button" class="btn modal--btnEnviar" onclick="validaEmailEsqueciASenha()">Enviar</button>
+                        <button type="button" class="btn btnForm" onclick="validaEmailEsqueciASenha(this)">Enviar</button>
                       </form>
                 </div>
             </div>
@@ -114,7 +116,7 @@
 
     <script src="js/btn-mobile.js"></script>
 
-    <script src="js/loginOliver.js"></script>
+    <script src="js/form.js"></script>
 
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 

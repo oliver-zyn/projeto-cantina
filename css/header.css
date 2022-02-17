@@ -44,7 +44,7 @@ header {
     cursor: pointer;
     margin-left: 1rem;
     padding: .7rem 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
     color: #494949;
     transition: .5s ease-in-out;
     cursor: pointer;
