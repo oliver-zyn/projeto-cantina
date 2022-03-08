@@ -1,11 +1,21 @@
-.cadastro--container {
-    opacity: 0;
-    margin: 0 10%;
+.container {
+    width: 100%;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+.cadastro--container {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    max-width: 1000px;
+    padding-bottom: 30px;
     animation: cadastro-anim .8s .6s forwards ease-in-out;
 }
 
@@ -48,6 +58,12 @@
    font-size: .9rem;
    padding-top: 5px;
    display: none;
+}
+
+@media (max-width: 767px) {
+    .container {
+        height: 85vh;
+    }
 }
 
 @keyframes cadastro-anim {

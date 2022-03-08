@@ -8,7 +8,7 @@
 }
 
 .login--box {
-    width: 910px;
+    width: 1200px;
     height: 512px;
     margin: 0 20px;
     display: grid;
@@ -111,6 +111,12 @@
       transform: translateX(0);
     }
   }
+
+@media (max-width: 1500px) {
+    .login--box {
+        width: 910px;
+    }
+}
 
 @media (max-width: 800px) {
     .login--box {
