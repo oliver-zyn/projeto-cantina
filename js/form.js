@@ -18,25 +18,38 @@ let oSimbolosConfirmaSenha = {
 }
 
 function validaEmail(tagEmail, bModalEsqueciSenha) {
-    let valorEmail = tagEmail.value
+    let tagEmailF;
+    let valorEmail;
 
-    if (valorEmail.indexOf(' ') >= 0) {
-        mostraErro(0, 'O email não pode conter espaços!')
+    if (bModalEsqueciSenha) {
+        tagEmailF = document.querySelector('#inputEmailEsqueciASenha')
+        valorEmail = tagEmailF.value
     } else {
-        let validacaoRegex = /\S+@\S+\.\S+/;
-        let resultadoValidacao = validacaoRegex.test(valorEmail);
+        tagEmailF = tagEmail
+        valorEmail = tagEmail.value
+    }
 
-        if (!bModalEsqueciSenha) {
-            if (resultadoValidacao) {
-                mostraOk(oSimbolosEmail, tagEmail)
-            } else {
-                mostraErro(oSimbolosEmail, tagEmail, 'Email Inválido!')
-            }
+    if (valorEmail == '') {
+        return mostraErro(oSimbolosEmail, tagEmailF, 'Não deixe o campo em branco!')
+    } else {
+        if (valorEmail.indexOf(' ') >= 0) {
+            mostraErro(oSimbolosEmail, tagEmailF, 'O email não pode conter espaços!')
         } else {
-            if (resultadoValidacao == true) {
-                alert('Email enviado com sucesso!')
+            let validacaoRegex = /\S+@\S+\.\S+/;
+            let resultadoValidacao = validacaoRegex.test(valorEmail);
+
+            if (!bModalEsqueciSenha) {
+                if (resultadoValidacao) {
+                    mostraOk(oSimbolosEmail, tagEmail)
+                } else {
+                    mostraErro(oSimbolosEmail, tagEmail, 'Email Inválido!')
+                }
             } else {
-                alert('Email Inválido!')
+                if (resultadoValidacao) {
+                    alert('Email enviado com sucesso!')
+                } else {
+                    alert('Email Inválido!')
+                }
             }
         }
     }
