@@ -50,7 +50,7 @@
                         <span class="notificacao">1</span>
                     </i>
                 </a>
-                <a href="inscricao.html">
+                <a href="#">
                     <div class="link cadastro">Cadastre-se<span class="link--linha"></span></div>
                 </a>
                 <a href="login.html">
@@ -65,18 +65,18 @@
             <div class="cadastro--title">
                 <h1>Cadastre-se</h1>
             </div>
-            <form class="row g-3">
+            <form class="row g-3" novalidate>
                 <div class="col-md-4">
                   <label for="inputEmail4" class="form-label">Nome</label>
-                  <input type="email" class="form-control" id="inputNome" placeholder="Nome">
+                  <input type="text" class="form-control" id="inputNome" placeholder="Nome">
                 </div>
                 <div class="col-md-4 input--box">
                   <label for="inputPassword4" class="form-label">Sobrenome</label>
-                  <input type="password" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                  <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
                 </div>
                 <div class="col-md-4 input--box">
                   <label for="inputAddress" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Email" onchange="validaEmail(this)">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="validaEmail(this, false)">
                   <i class="fas fa-check-circle ok" id="okEmail"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroEmail"></i>
                     <span id="msgErroEmail" class="msgErro">Mensagem de erro</span>
@@ -122,14 +122,14 @@
                 </div>
                 <div class="col-md-6 input--box">
                     <label for="inputCity" class="form-label">Senha</label>
-                    <input type="text" class="form-control" id="inputSenha" placeholder="Senha" onchange="validaSenha(this)">
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha" onchange="validaSenha(this)">
                     <i class="fas fa-check-circle ok" id="okSenha"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroSenha"></i>
                     <span id="msgErroSenha" class="msgErro">Mensagem de erro</span>
                 </div>
                 <div class="col-md-6 input--box">
                     <label for="inputCity" class="form-label">Confirme sua senha</label>
-                    <input type="text" class="form-control" id="inputConfirmSenha" placeholder="Confirmar Senha" onchange="validaVerificaSenhas(this)">
+                    <input type="password" class="form-control" id="inputConfirmSenha" placeholder="Confirmar Senha" onchange="validaSenhaIgual(this, 'inputSenha')">
                     <i class="fas fa-check-circle ok" id="okConfirmSenha"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroConfirmSenha"></i>
                     <span id="msgErroConfirmSenha" class="msgErro">Mensagem de erro</span>
