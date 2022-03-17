@@ -7,7 +7,7 @@
     --cor02: #FF6D21;
     --cor03: #FA9529;
     --cor04: #233545;
-    --cor05: #fafafd;
+    --cor05: #fafafa;
 }
 
 * {
@@ -28,6 +28,11 @@ a {
 p {
   margin: 0;
   padding: 0;
+}
+
+.title {
+  text-align: center;
+  color: var(--cor04);
 }
 
 body, html {

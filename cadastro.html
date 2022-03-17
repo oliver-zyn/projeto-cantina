@@ -66,17 +66,17 @@
                 <h1>Cadastre-se</h1>
             </div>
             <form class="row g-3" novalidate>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                  <input type="text" class="form-control" id="inputNome" placeholder="Nome" maxlength="200">
                 </div>
-                <div class="col-md-4 input--box">
+                <div class="col-md-6 input--box">
                   <label for="inputPassword4" class="form-label">Sobrenome</label>
-                  <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                  <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome" maxlength="200">
                 </div>
                 <div class="col-md-4 input--box">
                   <label for="inputAddress" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="validaEmail(this, false)">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" onchange="validaEmail(this, false)" maxlength="200">
                   <i class="fas fa-check-circle ok" id="okEmail"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroEmail"></i>
                     <span id="msgErroEmail" class="msgErro">Mensagem de erro</span>
@@ -86,54 +86,23 @@
                     <input type="text" class="form-control" id="inputTel" placeholder="Telefone" oninput="mascararTel(this.value)" maxlength="15">
                 </div>
                 <div class="col-md-4">
-                    <label for="inputState" class="form-label">Estado</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar">
-                    <datalist id="datalistOptions">
-                        <option value="Acre">
-                        <option value="Alagoas">
-                        <option value="Amazonas">
-                        <option value="Bahia">
-                        <option value="Ceará">
-                        <option value="Distrito Federal">
-                        <option value="Espírito Santo">
-                        <option value="Goiás">
-                        <option value="Maranhão">
-                        <option value="Mato Grosso">
-                        <option value="Mato Grosso do Sul">
-                        <option value="Minas Gerais">
-                        <option value="Pará">
-                        <option value="Paraíba">
-                        <option value="Paraná">
-                        <option value="Piauí">
-                        <option value="Rio de Janeiro">
-                        <option value="Rio Grande do Norte">
-                        <option value="Rio Grande do Sul">
-                        <option value="Rondônia">
-                        <option value="Roraima">
-                        <option value="Santa Catarina">
-                        <option value="São Paulo">
-                        <option value="Sergipe">
-                        <option value="Tocantins">
-                    </datalist>
-                  </div>
-                <div class="col-md-4">
                   <label for="inputCity" class="form-label">Cidade</label>
-                  <input type="text" class="form-control" id="inputCidade" placeholder="Cidade">
+                  <input type="text" class="form-control" id="inputCidade" placeholder="Cidade" maxlength="200">
                 </div>
                 <div class="col-md-6 input--box">
                     <label for="inputCity" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha" onchange="validaSenha(this)">
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha" onchange="validaSenha(this)" maxlength="200">
                     <i class="fas fa-check-circle ok" id="okSenha"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroSenha"></i>
                     <span id="msgErroSenha" class="msgErro">Mensagem de erro</span>
                 </div>
                 <div class="col-md-6 input--box">
                     <label for="inputCity" class="form-label">Confirme sua senha</label>
-                    <input type="password" class="form-control" id="inputConfirmSenha" placeholder="Confirmar Senha" onchange="validaSenhaIgual(this, 'inputSenha')">
+                    <input type="password" class="form-control" id="inputConfirmSenha" placeholder="Confirmar Senha" onchange="validaSenhaIgual(this, 'inputSenha')" maxlength="200">
                     <i class="fas fa-check-circle ok" id="okConfirmSenha"></i>
                     <i class="fas fa-exclamation-circle erro" id="erroConfirmSenha"></i>
                     <span id="msgErroConfirmSenha" class="msgErro">Mensagem de erro</span>
-                  </div>
+                </div>
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="chkTermos">

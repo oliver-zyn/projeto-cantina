@@ -15,9 +15,11 @@
 
     <link rel="stylesheet" href="css/home.css">
 
+    <link rel="stylesheet" href="css/cardapio.css">
+
     <title>Projeto Integrador</title>
 </head>
-<body>
+<body onload="carregaDiaSemana()">
 
     <header>
         <a href="#">
@@ -74,7 +76,142 @@
     </section>
 
     <section class="cardapio">
-        
+        <div class="headerCardapio">
+            <h1 class="title">Cardápio</h1>
+            <span></span>
+        </div>
+
+        <div class="diasSemana" id="diasSemana">
+            <div class="dia activeSemana" data-dia="segunda" onclick="alteraBtnDiaSemana(this)">
+                Segunda
+            </div>
+            <div class="dia" data-dia="terca" onclick="alteraBtnDiaSemana(this)">
+                Terça
+            </div>
+            <div class="dia" data-dia="quarta" onclick="alteraBtnDiaSemana(this)">
+                Quarta
+            </div>
+            <div class="dia" data-dia="quinta" onclick="alteraBtnDiaSemana(this)">
+                Quinta
+            </div>
+            <div class="dia" data-dia="sexta" onclick="alteraBtnDiaSemana(this)">
+                Sexta
+            </div>
+            <div class="dia" data-dia="bebidas" onclick="alteraBtnDiaSemana(this)">
+                Bebidas
+            </div>
+        </div>
+
+        <div class="cards" id="cards">
+            <!-- <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="images/burguerTeste.jpg" alt="">
+                </div>
+                <div class="cardBody">
+                    <h3>Comida 1</h3>
+                    <div class="precoQuantidade">
+                        <p>R$ 30,00</p>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <p>0</p>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div> -->
+        </div>
     </section>
 
     <script src="js/btn-mobile.js"></script>
@@ -86,6 +223,8 @@
     <script type="text/javascript" src="JS/bootstrap.js"></script>
 
     <script type="text/javascript" src="JS/app.js"></script>
+
+    <script src="js/cardapio.js"></script>
 
 </body>
 </html>
