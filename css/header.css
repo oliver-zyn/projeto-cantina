@@ -129,7 +129,7 @@ header {
     display: none;
   }
 
-@media (max-width: 1081px) {
+@media (max-width: 1084px) {
     .navbar--btnMobile {
         display: initial;
     }

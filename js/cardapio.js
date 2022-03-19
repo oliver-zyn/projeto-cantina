@@ -1,21 +1,22 @@
 let comidas = {
     segunda: {
         comida01: {
+            id: '213o9cdu8w',
             nome: 'Comida 01 Segunda',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$30,00',
+            preco: '30.00',
             peso: '150g'
         },
         comida02: {
             nome: 'Comida 02 Segunda',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$20,00',
+            preco: '20.00',
             peso: '200g'
         },
         comida03: {
             nome: 'Comida 03 Segunda',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$35,00',
+            preco: '35.00',
             peso: '320g'
         }
     },
@@ -23,19 +24,19 @@ let comidas = {
         comida01: {
             nome: 'Comida 01 Terça',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$30,00',
+            preco: '30.00',
             peso: '150g'
         },
         comida02: {
             nome: 'Comida 02 Terça',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$20,00',
+            preco: '20.00',
             peso: '200g'
         },
         comida03: {
             nome: 'Comida 03 Terça',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$35,00',
+            preco: '35.00',
             peso: '320g'
         }
     },
@@ -43,19 +44,19 @@ let comidas = {
         comida01: {
             nome: 'Comida 01 Quarta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$30,00',
+            preco: '30.00',
             peso: '150g'
         },
         comida02: {
             nome: 'Comida 02 Quarta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$20,00',
+            preco: '20.00',
             peso: '200g'
         },
         comida03: {
             nome: 'Comida 03 Quarta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$35,00',
+            preco: '35.00',
             peso: '320g'
         }
     },
@@ -63,19 +64,19 @@ let comidas = {
         comida01: {
             nome: 'Comida 01 Quinta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$30,00',
+            preco: '30.00',
             peso: '150g'
         },
         comida02: {
             nome: 'Comida 02 Quinta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$20,00',
+            preco: '20.00',
             peso: '200g'
         },
         comida03: {
             nome: 'Comida 03 Quinta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$35,00',
+            preco: '35.00',
             peso: '320g'
         }
     },
@@ -83,19 +84,19 @@ let comidas = {
         comida01: {
             nome: 'Comida 01 Sexta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$30,00',
+            preco: '30.00',
             peso: '150g'
         },
         comida02: {
             nome: 'Comida 02 Sexta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$20,00',
+            preco: '20.00',
             peso: '200g'
         },
         comida03: {
             nome: 'Comida 03 Sexta',
             img: '../images/burguerTeste.jpg',
-            preco: 'R$35,00',
+            preco: '35.00',
             peso: '320g'
         }
     },
@@ -103,19 +104,19 @@ let comidas = {
         bebida01: {
             nome: 'Bebida 01',
             img: '../images/bebidaTeste.png',
-            preco: 'R$5,00',
+            preco: '5.00',
             peso: '200ml'
         },
         bebida02: {
             nome: 'Bebida 02',
             img: '../images/bebidaTeste.png',
-            preco: 'R$10,00',
+            preco: '10.00',
             peso: '600ml'
         },
         bebida03: {
             nome: 'Bebida 03',
             img: '../images/bebidaTeste.png',
-            preco: 'R$15,00',
+            preco: '15.00',
             peso: '1L'
         }
     },
@@ -139,37 +140,34 @@ function atualizaCards(tipoBtn) {
 
     let objCard = comidas[tipoBtn]
 
-    let j = 0
-
-    for (let i in objCard) {
+    Object.keys(objCard).forEach((item, index) => {
         cards.innerHTML += 
         ` 
         <div class="card">
             <div class="cardImg">
-                <img src=${objCard[i].img} alt="">
+                <img src=${objCard[item].img} alt="">
             </div>
             <div class="cardBody">
-                <h3>${objCard[i].nome}</h3>
+                <h3>${objCard[item].nome}</h3>
                 <div class="precoQuantidade">
-                    <p>${objCard[i].preco}</p>
+                    <p>R$${objCard[item].preco.replace('.', ',')}</p>
                     <div class="quantidade">
-                        <button onclick="decrementClick(${j})">-</button>
+                        <button onclick="decrementClick(${index})">-</button>
                         <p class="num-contador">0</p>
-                        <button onclick="incrementClick(${j})">+</button>
+                        <button onclick="incrementClick(${index})">+</button>
                     </div>
                 </div>
-                <p><i class="fas fa-balance-scale"></i> ${objCard[i].peso} Unidade</p>
-                <button class="btnComprar">Comprar</button>
+                <p><i class="fas fa-balance-scale"></i> ${objCard[item].peso} Unidade</p>
+                <button class="btnComprar" onclick="addCarrinho('${objCard[item].nome}', '${objCard[item].preco}', '${objCard[item].img}')">Comprar</button>
             </div>
         </div>
         `
-        j++
-    }
+    })
 }
 
 function carregaDiaSemana() {
-    let semana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
-    let date = new Date();
+    let semana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"]
+    let date = new Date()
 
     let diaAtual = semana[date.getDay()];
 
@@ -189,24 +187,37 @@ function carregaDiaSemana() {
     }
 }
 
-let counterVal = 0
-
 function incrementClick(classNumber) {
-    updateDisplay(++counterVal, classNumber);
+    let tagContador = document.querySelectorAll(".num-contador")[classNumber];
+
+    let valorContador = Number(tagContador.getAttribute('data-contador'));
+
+    if (valorContador == 0) {
+        valorContador = 1
+    } else {
+        ++valorContador
+    }
+
+    updateDisplay(tagContador, valorContador)
 }
 
 function decrementClick(classNumber) {
+    let tagContador = document.querySelectorAll(".num-contador")[classNumber];
 
-    if (counterVal <= 0) {
-        counterVal = 0
-        updateDisplay(0, classNumber);
+    let valorContador = Number(tagContador.getAttribute('data-contador'));
+
+    if (valorContador == 0) {
+        valorContador = 0
     } else {
-        updateDisplay(--counterVal, classNumber);
+        --valorContador
     }
 
+    updateDisplay(tagContador, valorContador)
 }
 
-function updateDisplay(val, classNumber) {
-    document.querySelectorAll(".num-contador")[classNumber].innerHTML = val;
+function updateDisplay(tagContador, valorContador) {
+    tagContador.setAttribute('data-contador', valorContador);
+
+    tagContador.innerHTML = valorContador
 }
 

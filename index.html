@@ -17,8 +17,11 @@
 
     <link rel="stylesheet" href="css/cardapio.css">
 
+    <link rel="stylesheet" href="css/carrinho.css">
+
     <title>Projeto Integrador</title>
 </head>
+
 <body onload="carregaDiaSemana()">
 
     <header>
@@ -45,7 +48,7 @@
             </div>
 
             <div class="navbar--login">
-                <a href="#">
+                <a href="#" onclick="abreFechaModal()">
                     <i class="fas fa-shopping-cart carrinho">
                         <span class="notificacao">1</span>
                     </i>
@@ -59,6 +62,17 @@
             </div>
         </nav>
     </header>
+
+    <div class="modalCarrinho" id="modalCarrinho">
+        <button class="btnFechar" onclick="abreFechaModal()">&times;</button>
+        <i class="fas fa-shopping-cart"></i>
+        <div class="pedidos" id="pedidos">
+            
+        </div>
+        <div class="subtotal" id="subtotal"><strong>Subtotal:</strong> R$ 0</div>
+        <span></span>
+        <button class="btnPedido">Fechar Pedido</button>
+    </div>
 
     <section class="home" id="home">
         <div class="home--text">
@@ -103,116 +117,19 @@
         </div>
 
         <div class="cards" id="cards">
-            <!-- <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardImg">
-                    <img src="images/burguerTeste.jpg" alt="">
-                </div>
-                <div class="cardBody">
-                    <h3>Comida 1</h3>
-                    <div class="precoQuantidade">
-                        <p>R$ 30,00</p>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <p>0</p>
-                            <button>+</button>
-                        </div>
-                    </div>
-                    <p><i class="fas fa-balance-scale"></i> 150g Unidade</p>
-                    <button class="btnComprar">Comprar</button>
-                </div>
-            </div> -->
+        
         </div>
+    
     </section>
+
+   
+
+    <script>
+        let modal = document.querySelector('#modalCarrinho')
+        function abreFechaModal() {
+            modal.classList.toggle('ativo')
+        }
+    </script>
 
     <script src="js/btn-mobile.js"></script>
 
@@ -225,6 +142,8 @@
     <script type="text/javascript" src="JS/app.js"></script>
 
     <script src="js/cardapio.js"></script>
+
+    <script src="js/carrinho.js"></script>
 
 </body>
 </html>
