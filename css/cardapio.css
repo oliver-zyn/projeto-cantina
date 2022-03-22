@@ -1,24 +1,8 @@
 .cardapio {
-    height: 100vh;
+    height: auto;
     width: 100%;
     padding-top: 50px;
     padding: 50px 8%;
-}
-
-.headerCardapio {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.headerCardapio span {
-    display: block;
-    width: 100px;
-    height: 2px;
-    margin-top: 10px;
-    background: #FA9529;
 }
 
 .diasSemana {
