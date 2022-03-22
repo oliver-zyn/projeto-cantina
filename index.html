@@ -24,7 +24,7 @@
     <title>Projeto Integrador</title>
 </head>
 
-<body onload="carregaDiaSemana()">
+<body onload="carregaDiaSemana(), carregaPedidos()">
 
     <header>
         <a href="#">
@@ -52,7 +52,7 @@
             <div class="navbar--login">
                 <a href="#" onclick="abreFechaModal()">
                     <i class="fas fa-shopping-cart carrinho">
-                        <span class="notificacao">1</span>
+                        <span class="notificacao" id="notificacao">0</span>
                     </i>
                 </a>
                 <a href="cadastro.html">

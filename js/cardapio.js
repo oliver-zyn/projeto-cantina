@@ -135,7 +135,6 @@ function alteraBtnDiaSemana(button) {
 
 function atualizaCards(tipoBtn) {
     let cards = document.querySelector('#cards')
-    counterVal = 0
     cards.innerHTML = ""
 
     let objCard = comidas[tipoBtn]
@@ -153,12 +152,12 @@ function atualizaCards(tipoBtn) {
                     <p>R$${objCard[item].preco.replace('.', ',')}</p>
                     <div class="quantidade">
                         <button onclick="decrementClick(${index})">-</button>
-                        <p class="num-contador">0</p>
+                        <p class="num-contador" data-contador="1">1</p>
                         <button onclick="incrementClick(${index})">+</button>
                     </div>
                 </div>
                 <p><i class="fas fa-balance-scale"></i> ${objCard[item].peso} Unidade</p>
-                <button class="btnComprar" onclick="addCarrinho('${objCard[item].nome}', '${objCard[item].preco}', '${objCard[item].img}')">Comprar</button>
+                <button class="btnComprar" onclick="addCarrinho('${objCard[item].nome}', '${objCard[item].preco}', '${objCard[item].img}', ${index})">Comprar</button>
             </div>
         </div>
         `
@@ -187,6 +186,16 @@ function carregaDiaSemana() {
     }
 }
 
+function carregaPedidos() {
+    let pedidos = JSON.parse(localStorage.getItem('pedidosCarrinho'))
+
+    if (!pedidos) {
+        return
+    } else {
+        atualizaCarrinho(pedidos)
+    }
+}
+
 function incrementClick(classNumber) {
     let tagContador = document.querySelectorAll(".num-contador")[classNumber];
 
@@ -206,8 +215,8 @@ function decrementClick(classNumber) {
 
     let valorContador = Number(tagContador.getAttribute('data-contador'));
 
-    if (valorContador == 0) {
-        valorContador = 0
+    if (valorContador == 1) {
+        valorContador = 1
     } else {
         --valorContador
     }
