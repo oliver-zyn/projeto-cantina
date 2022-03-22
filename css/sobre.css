@@ -1,11 +1,10 @@
-.titulo-info-1 {
-  color: var(--cor03);
-  text-align: center;
-}
-
 .info-2 {
   background-color: var(--cor04);
   height: 100%;
+}
+
+.info-2 h1 {
+  text-align: center;
 }
 
 .titulo-info-2 {
@@ -15,14 +14,14 @@
 
 /* CARDS */
 
-.cards {
+.cardsSobre {
   display: flex;
-  width: 1040px;
+  width: 100%;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-.card {
+.cardSobre {
   margin: 10px;
   background-color: #fff;
   border-radius: 10px;
