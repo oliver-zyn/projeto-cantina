@@ -24,7 +24,7 @@
     <title>Projeto Integrador</title>
 </head>
 
-<body onload="carregaDiaSemana(), carregaPedidos()">
+<body onload="carregaDiaSemana()">
 
     <header>
         <a href="#">
@@ -38,7 +38,7 @@
                 <a href="#">
                     <div class="link active">Home<span class="link--linha"></span></div>
                 </a>
-                <a href="#">
+                <a href="">
                     <div class="link">Cardápio<span class="link--linha"></span></div>
                 </a>
                 <a href="sobre.html">
@@ -52,7 +52,7 @@
             <div class="navbar--login">
                 <a href="#" onclick="abreFechaModal()">
                     <i class="fas fa-shopping-cart carrinho">
-                        <span class="notificacao" id="notificacao">0</span>
+                        <span class="notificacao">1</span>
                     </i>
                 </a>
                 <a href="cadastro.html">
@@ -205,10 +205,9 @@
                 <div class="card-body">
                     <span class="tag tag-teal">Back-End</span>
                     <h4 class="card-descrition">
-                        Why is the Tesla Cybertruck designed the way it
-                        is?
+                        Responsável por requisições dos clientes, autenticações, registros e verificações dentro do site.
                     </h4>
-                    <div class="user">
+                    <div class="user mt-2">
                         <img src="./images/aluno_marvin.jpeg" alt="user" />
                         <div class="user-info">
                             <h5>JD Marvin Destin</h5>
@@ -241,10 +240,11 @@
                 </div>
                 <div class="card-body">
                     <span class="tag tag-pink">Front-End</span>
+                    <span class="tag tag-teal mt-1">Back-End</span>
                     <h4 class="card-descrition">
-                        10 Rules of Dashboard Design
+                        Implementações direcionadas ao conteúdo visível e interativo ao usuário.
                     </h4>
-                    <div class="user">
+                    <div class="user mt-2">
                         <img src="images/aluno_oliver.jpeg" alt="user" />
                         <div class="user-info">
                             <h5>Oliver Lohann Mayer</h5>
@@ -265,8 +265,7 @@
                 <div class="card-body">
                     <span class="tag tag-teal">Front-End</span>
                     <h4 class="card-descrition">
-                        Why is the Tesla Cybertruck designed the way it
-                        is?
+                        Desenvolvimento da tela de cadastro, login e rodapé
                     </h4>
                     <div class="user">
                         <img src="./images/aluno_arthur.jpeg" alt="user" />
@@ -284,8 +283,7 @@
                 <div class="card-body">
                     <span class="tag tag-purple">Banco de Dados</span>
                     <h4 class="card-descrition">
-                        How to Keep Going When You Don’t Know What’s Next
-                    </h4>
+                        Apresentação de banco de dados                    </h4>
                     <div class="user">
                         <img src="./images/aluno_joao-vitor.jpeg" alt="user" />
                         <div class="user-info">
@@ -302,8 +300,7 @@
                 <div class="card-body">
                     <span class="tag tag-pink">Análise</span>
                     <h4 class="card-descrition">
-                        10 Rules of Dashboard Design
-                    </h4>
+                        Análise, documentação e planejamento de implementações dentro do site.                    </h4>
                     <div class="user">
                         <img src="images/aluna_heloisa.jpeg" />
                         <div class="user-info">
@@ -316,20 +313,67 @@
 
 
         </div>
+
+        <div class="container cardsSobre">
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_alan.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-orange">Análise</span>
+                    <h4 class="card-descrition">
+                        Análise e alterações no front-end
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_alan.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>Alan Boesing</h5>
+                            <small>@alan_boesing01</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_joao-pedro.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">Banco de Dados</span>
+                    <h4 class="card-descrition">
+                        De maneira sucinta eu faço parte do banco de dados
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_joao-pedro.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>João Pedro Balhan</h5>
+                            <small>@</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluna_giovanna.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">Front-End</span>
+                    <span class="tag tag-purple mt-1">Banco de Dados</span>
+                    <h4 class="card-descrition my-1">
+                        Construção da interface do usuário e estruturação do banco de dados
+                    </h4>
+                    <div class="user mt-2">
+                        <img src="images/aluna_giovanna.jpeg" />
+                        <div class="user-info">
+                            <h5>Giovanna Resende</h5>
+                            <small>@gio_lima.13</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </section>
-    <style>
-        footer {
-          text-align: center;
-          padding: 3px;
-          background-color: #fe7c24;
-          color: white;
-        }
-        </style>
-        <footer>
-            <p>Telefone: (46) 3272-3700<br>
-            <p> Instagram: senacparana 
-             <p>Endereço: Av. Tupi, 385 - Bortot, Pato Branco - PR, 85504-000 </a> 
-          </footer>
 
    
 
