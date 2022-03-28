@@ -1,168 +1,115 @@
-let comidas = {
-    segunda: {
-        comida01: {
-            id: '213o9cdu8w',
-            nome: 'Comida 01 Segunda',
-            img: '../images/burguerTeste.jpg',
-            preco: '30.00',
-            peso: '150g'
-        },
-        comida02: {
-            nome: 'Comida 02 Segunda',
-            img: '../images/burguerTeste.jpg',
-            preco: '20.00',
-            peso: '200g'
-        },
-        comida03: {
-            nome: 'Comida 03 Segunda',
-            img: '../images/burguerTeste.jpg',
-            preco: '35.00',
-            peso: '320g'
-        }
+let comidas = [
+    {
+        _id: "623cc9ff32e3af7ca656fff0",
+		nome: "Mini Pizza",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "segunda"
     },
-    terca: {
-        comida01: {
-            nome: 'Comida 01 Terça',
-            img: '../images/burguerTeste.jpg',
-            preco: '30.00',
-            peso: '150g'
-        },
-        comida02: {
-            nome: 'Comida 02 Terça',
-            img: '../images/burguerTeste.jpg',
-            preco: '20.00',
-            peso: '200g'
-        },
-        comida03: {
-            nome: 'Comida 03 Terça',
-            img: '../images/burguerTeste.jpg',
-            preco: '35.00',
-            peso: '320g'
-        }
+    {
+        _id: "623cc9ff32e3af7ca656fff1",
+		nome: "Mini Pizza",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "segunda"
     },
-    quarta: {
-        comida01: {
-            nome: 'Comida 01 Quarta',
-            img: '../images/burguerTeste.jpg',
-            preco: '30.00',
-            peso: '150g'
-        },
-        comida02: {
-            nome: 'Comida 02 Quarta',
-            img: '../images/burguerTeste.jpg',
-            preco: '20.00',
-            peso: '200g'
-        },
-        comida03: {
-            nome: 'Comida 03 Quarta',
-            img: '../images/burguerTeste.jpg',
-            preco: '35.00',
-            peso: '320g'
-        }
+    {
+        _id: "623cc96d32e3af7ca656fff2",
+		nome: "Hamburguer",
+		tipoProduto: "comida",
+		preco: 20,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "300g",
+        diaSemana: "terca"
     },
-    quinta: {
-        comida01: {
-            nome: 'Comida 01 Quinta',
-            img: '../images/burguerTeste.jpg',
-            preco: '30.00',
-            peso: '150g'
-        },
-        comida02: {
-            nome: 'Comida 02 Quinta',
-            img: '../images/burguerTeste.jpg',
-            preco: '20.00',
-            peso: '200g'
-        },
-        comida03: {
-            nome: 'Comida 03 Quinta',
-            img: '../images/burguerTeste.jpg',
-            preco: '35.00',
-            peso: '320g'
-        }
+    {
+        _id: "623cc96d32e3af7ca656fff3",
+		nome: "Hamburguer",
+		tipoProduto: "comida",
+		preco: 20,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "300g",
+        diaSemana: "terca"
     },
-    sexta: {
-        comida01: {
-            nome: 'Comida 01 Sexta',
-            img: '../images/burguerTeste.jpg',
-            preco: '30.00',
-            peso: '150g'
-        },
-        comida02: {
-            nome: 'Comida 02 Sexta',
-            img: '../images/burguerTeste.jpg',
-            preco: '20.00',
-            peso: '200g'
-        },
-        comida03: {
-            nome: 'Comida 03 Sexta',
-            img: '../images/burguerTeste.jpg',
-            preco: '35.00',
-            peso: '320g'
-        }
+    {
+        _id: "623cca8c32e3af7ca656fff4",
+		nome: "Bolo",
+		tipoProduto: "comida",
+		preco: 15,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "quarta"
     },
-    bebidas: {
-        bebida01: {
-            nome: 'Bebida 01',
-            img: '../images/bebidaTeste.png',
-            preco: '5.00',
-            peso: '200ml'
-        },
-        bebida02: {
-            nome: 'Bebida 02',
-            img: '../images/bebidaTeste.png',
-            preco: '10.00',
-            peso: '600ml'
-        },
-        bebida03: {
-            nome: 'Bebida 03',
-            img: '../images/bebidaTeste.png',
-            preco: '15.00',
-            peso: '1L'
-        }
+    {
+        _id: "623cca8c32e3af7ca656fff5",
+		nome: "Bolo",
+		tipoProduto: "comida",
+		preco: 15,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "quarta"
     },
-}
+    {
+        _id: "623cc9ff32e3af7ca656fff6",
+		nome: "Brigadeiro",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "quinta"
+    },
+    {
+        _id: "623cc9ff32e3af7ca656fff7",
+		nome: "Brigadeiro",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "quinta"
+    },
+    {
+        _id: "623cc9ff32e3af7ca656fff8",
+		nome: "Bombom Aberto",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "sexta"
+    },
+    {
+        _id: "623cc9ff32e3af7ca656fff9",
+		nome: "Bombom Aberto",
+		tipoProduto: "comida",
+		preco: 10,
+		imagem: "../images/burguerTeste.jpg",
+		descricao: "200g",
+        diaSemana: "sexta"
+    },
+    {
+        _id: "623cc9ff32e3af7ca656fff10",
+		nome: "Coca-Cola",
+		tipoProduto: "bebida",
+		preco: 10,
+		imagem: "../images/bebidaTeste.png",
+		descricao: "200g",
+        diaSemana: null
+    },
+    {
+        _id: "623cc9ff32e3af7ca656fff11",
+		nome: "Suco",
+		tipoProduto: "bebida",
+		preco: 10,
+		imagem: "../images/bebidaTeste.png",
+		descricao: "200g",
+        diaSemana: null
+    }
+]
 
-function alteraBtnDiaSemana(button) {
-    let atual = document.querySelectorAll('.activeSemana')
-    atual.forEach((element) => {
-        element.classList.remove('activeSemana')
-    })
-    button.classList.add("activeSemana")
-    let tipoBtn = button.getAttribute('data-dia')
-
-    atualizaCards(tipoBtn)
-}
-
-function atualizaCards(tipoBtn) {
-    let cards = document.querySelector('#cards')
-    cards.innerHTML = ""
-
-    let objCard = comidas[tipoBtn]
-
-    Object.keys(objCard).forEach((item, index) => {
-        cards.innerHTML += 
-        ` 
-        <div class="card">
-            <div class="cardImg">
-                <img src=${objCard[item].img} alt="">
-            </div>
-            <div class="cardBody">
-                <h3>${objCard[item].nome}</h3>
-                <div class="precoQuantidade">
-                    <p>R$${objCard[item].preco.replace('.', ',')}</p>
-                    <div class="quantidade">
-                        <button onclick="decrementClick(${index})">-</button>
-                        <p class="num-contador" data-contador="1">1</p>
-                        <button onclick="incrementClick(${index})">+</button>
-                    </div>
-                </div>
-                <p><i class="fas fa-balance-scale"></i> ${objCard[item].peso} Unidade</p>
-                <button class="btnComprar" onclick="addCarrinho('${objCard[item].nome}', '${objCard[item].preco}', '${objCard[item].img}', ${index})">Comprar</button>
-            </div>
-        </div>
-        `
-    })
-}
+//#region Tarefas Iniciais
 
 function carregaDiaSemana() {
     let semana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"]
@@ -176,50 +123,114 @@ function carregaDiaSemana() {
 
     let listaDias = document.querySelectorAll('.dia')
 
-    for (let item of listaDias) {
-        let diaSemana = item.getAttribute('data-dia')
+    for (let tagBtnDiaSemana of listaDias) {
+        let diaSemana = verificaDiaSemanaBtn(tagBtnDiaSemana)
 
         if (diaSemana == diaAtual) {
-            alteraBtnDiaSemana(item)
+            alteraBtnDiaSemana(tagBtnDiaSemana, diaSemana)
             break
         }
     }
 }
 
-function carregaPedidos() {
-    let pedidos = JSON.parse(localStorage.getItem('pedidosCarrinho'))
+//#endregion
 
-    if (!pedidos) {
-        return
-    } else {
-        atualizaCarrinho(pedidos)
-    }
+//#region Eventos
+
+function alteraBtnDiaSemana(tagBtnDiaSemana) {
+    let tagBtnDiaSemanaAtivo = document.querySelector('.activeSemana')
+    let diaSemana = verificaDiaSemanaBtn(tagBtnDiaSemana)
+    
+    tagBtnDiaSemanaAtivo.classList.remove('activeSemana')
+    tagBtnDiaSemana.classList.add("activeSemana")
+
+    let bVerificaBebida = diaSemana == 'bebida' ? true : false
+
+    atualizaCards(diaSemana, bVerificaBebida)
 }
 
-function incrementClick(classNumber) {
-    let tagContador = document.querySelectorAll(".num-contador")[classNumber];
+function atualizaCards(diaSemana, bVerificaBebida) {
+    let cards = document.querySelector('#cards')
+    cards.innerHTML = ""
 
-    let valorContador = Number(tagContador.getAttribute('data-contador'));
+    let arrayFiltrado
 
-    if (valorContador == 0) {
-        valorContador = 1
+    if (bVerificaBebida) {
+        arrayFiltrado = filtraBebidas()
     } else {
-        ++valorContador
+        arrayFiltrado = filtraComidasDiaSemana(diaSemana)
     }
+
+    arrayFiltrado.forEach(item => {
+        cards.innerHTML += 
+        ` 
+        <div class="card">
+            <div class="cardImg">
+                <img src=${item.imagem} alt="">
+            </div>
+            <div class="cardBody">
+                <h3>${item.nome}</h3>
+                <div class="precoQuantidade">
+                    <p>R$${item.preco.toFixed(2)}</p>
+                    <div class="quantidade">
+                        <button onclick="decrementClick('a${item._id}')">-</button>
+                        <p class="num-contador" id=a${item._id} data-contador="1">1</p>
+                        <button onclick="incrementClick('a${item._id}')">+</button>
+                    </div>
+                </div>
+                <p><i class="fas fa-balance-scale"></i> ${item.descricao} Unidade</p>
+                <button class="btnComprar" onclick="addCarrinho('a${item._id}', '${item.nome}', ${item.preco}, '${item.imagem}')">Comprar</button>
+            </div>
+        </div>
+        `
+    })
+}
+
+function verificaDiaSemanaBtn(tagBtnDiaSemana) {
+    let diaSemana = tagBtnDiaSemana.getAttribute('data-dia')
+
+    return diaSemana
+}
+
+function filtraComidasDiaSemana(diaSemana) {
+    let arrayComidasFiltrado = comidas.filter(comida => {
+        return comida.diaSemana == diaSemana
+    })
+
+    return arrayComidasFiltrado
+}
+
+function filtraBebidas() {
+    arrayBebidasFiltrado = comidas.filter(bebida => {
+        return bebida.tipoProduto == 'bebida'
+    })
+
+    return arrayBebidasFiltrado
+}
+
+//#region contador
+
+function incrementClick(id, contadorPedido = false) {
+    let {tagContador, valorContador} = dadosContador(id)
+    ++valorContador
+
+    verificaContadorPedido(contadorPedido, id, tagContador, valorContador)
 
     updateDisplay(tagContador, valorContador)
 }
 
-function decrementClick(classNumber) {
-    let tagContador = document.querySelectorAll(".num-contador")[classNumber];
+function decrementClick(id, contadorPedido = false) {
+    let {tagContador, valorContador} = dadosContador(id)
 
-    let valorContador = Number(tagContador.getAttribute('data-contador'));
-
-    if (valorContador == 1) {
+    if (valorContador == 1 && contadorPedido == true) {
+        removeCarrinho(id)
+    } else if (valorContador == 1) {
         valorContador = 1
     } else {
         --valorContador
     }
+
+    verificaContadorPedido(contadorPedido, id, tagContador, valorContador)
 
     updateDisplay(tagContador, valorContador)
 }
@@ -229,4 +240,22 @@ function updateDisplay(tagContador, valorContador) {
 
     tagContador.innerHTML = valorContador
 }
+
+function dadosContador(id) {
+    let tagContador = document.querySelector(`#${id}`);
+    let valorContador = Number(tagContador.getAttribute('data-contador'));
+
+    return {tagContador, valorContador}
+}
+
+function verificaContadorPedido(contadorPedido, id, tagContador, valorContador) {
+    if (contadorPedido) {
+        atualizaQtdItensCarrinho(id, tagContador, valorContador)
+        atualizaSubTotal()
+    }
+}
+
+//#endregion
+
+//#endregion
 

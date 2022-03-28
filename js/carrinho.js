@@ -1,78 +1,132 @@
 let pedidos = []
 
-function addCarrinho(nome, preco, img, index) {
+//#region Tarefas Iniciais
 
-    let contador = document.querySelectorAll('.num-contador')[index]
+function carregaPedidos() {
+    localStorage.clear()
+    let pedidosStorage = JSON.parse(localStorage.getItem('pedidosCarrinho'))
 
-    let valorContador = Number(contador.getAttribute('data-contador')) - 1
-
-    let tagPedidos = document.querySelector('#pedidos');
-
-    for(let i = 0; i <= valorContador; i++) {
-        tagPedidos.innerHTML += `
-                        <div class="pedido">
-                            <div class="pedido--img">
-                                <img src=${img} alt=${nome}>
-                            </div>
-                            <div class="pedido--texto">
-                                <h2>${nome}</h2>
-                                <p>${preco}</p>
-                            </div>
-                        </div>
-                        `
-        
-        pedidos.push({nome, preco, img})
+    if (!pedidosStorage) {
+        return;
+    } else {
+        for(let item of pedidosStorage) {
+            pedidos.push(item)
+        }
+        atualizaCarrinho()
     }
-
-    atualizaSubTotal(pedidos)
-    atualizaNotificacao(pedidos.length)
-    gravaPedidos(pedidos)
 }
 
-function atualizaCarrinho(pedidosCarrinho) {
-    let tagPedidos = document.querySelector('#pedidos');
+//#endregion
 
-    for(let item of pedidosCarrinho) {
-        tagPedidos.innerHTML += `
-                        <div class="pedido">
-                            <div class="pedido--img">
-                                <img src=${item.img} alt=${item.nome}>
-                            </div>
-                            <div class="pedido--texto">
-                                <h2>${item.nome}</h2>
-                                <p>${item.preco}</p>
-                            </div>
-                        </div>
-                        `
-        pedidos.push(item)
+//#region Eventos
+
+function addCarrinho(id, nome, preco, imagem) {
+
+    let {valorContador} = dadosContador(id)
+
+    let idProduto = 'b' + id
+
+    for(let i = 0; i < valorContador; i++) {
+        let pedidoExiste = buscaProduto(idProduto)
+
+        if (!pedidoExiste) {
+            pedidos.push({idProduto, nome, preco, imagem, quantidade: valorContador})
+            atualizaCarrinho()
+            break
+        } else {
+            atualizaContador(idProduto)
+            break
+        }
     }
-
-    atualizaNotificacao(pedidosCarrinho.length)
-    atualizaSubTotal(pedidosCarrinho)
-
-    console.log(pedidosCarrinho)
-    console.log(pedidos)
 }
 
-function atualizaSubTotal(pedidos) {
-    let subTotal = document.querySelector('#subtotal')
-    let total = 0
 
-    pedidos.forEach((element) => {
-        let precoProduto = Number(element.preco)
-        total += precoProduto
+function buscaProduto(idProduto) {
+    let produto = pedidos.find(item => item.idProduto == idProduto)
+
+    return produto
+}
+
+function atualizaCarrinho() {
+    let tagPedidos = document.querySelector('#pedidos');
+    tagPedidos.innerHTML = ""
+
+    pedidos.forEach(pedido => {
+        tagPedidos.innerHTML += `
+                                <div class="pedido">
+                                <div class="quantidade pedido--quantidade">
+                                    <button onclick="decrementClick('${pedido.idProduto}', true)">-</button>
+                                    <p id="${pedido.idProduto}" class="num-contador-pedido" data-contador=${pedido.quantidade}>${pedido.quantidade}</p>
+                                    <button onclick="incrementClick('${pedido.idProduto}', true)">+</button>
+                                </div>
+                                    <div class="pedido--item">
+                                        <div class="pedido--img">
+                                            <img src=${pedido.imagem} alt=${pedido.nome}>
+                                        </div>
+                                        <div class="pedido--texto">
+                                            <h2>${pedido.nome}</h2>
+                                            <p>R$${pedido.preco.toFixed(2)}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                `
     })
 
-    subTotal.innerHTML = `<strong>Subtotal:</strong> R$ ${total}`
-    total = 0
+    atualizaNotificacao()
+    atualizaSubTotal()
+    gravaPedidos()
 }
 
-function atualizaNotificacao(index) {
+function atualizaContador(idProduto) {
+    let {valorContador} = dadosContador(idProduto.replace(/^./, ""))
+    let {tagContador} = dadosContador(idProduto)
+
+    atualizaQtdItensCarrinho(idProduto, tagContador, valorContador)
+    
+    atualizaSubTotal()
+
+}
+
+function atualizaQtdItensCarrinho(idProduto, tagContador, valorContador) {
+    let indexPedidos = pedidos.findIndex(pedido => {
+        return pedido.idProduto === idProduto
+    })
+
+    pedidos[indexPedidos].quantidade = valorContador
+
+    updateDisplay(tagContador, pedidos[indexPedidos].quantidade)
+}
+
+function removeCarrinho(idProduto) {
+    for (let indice in pedidos) {
+        let pedido = pedidos[indice];
+        if (pedido.idProduto == idProduto) {
+            pedidos.splice(indice, 1)
+
+            atualizaCarrinho()
+        }
+    }
+}
+
+function atualizaSubTotal() {
+    let tagSubTotal = document.querySelector('#subtotal')
+    let subtotal = 0
+
+    pedidos.forEach(pedido => {
+        subtotal += pedido.preco * pedido.quantidade
+    })
+
+    tagSubTotal.innerHTML = `<strong>Subtotal:</strong> R$ ${subtotal}`
+}
+
+function atualizaNotificacao() {
     let notf = document.querySelector('#notificacao')
 
-    notf.innerHTML = index
+    notf.innerHTML = pedidos.length
 }
 
-function gravaPedidos(pedidos) {
+function gravaPedidos() {
     localStorage.setItem('pedidosCarrinho', JSON.stringify(pedidos))
 }
+
+//#endregion

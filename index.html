@@ -24,7 +24,7 @@
     <title>Projeto Integrador</title>
 </head>
 
-<body onload="carregaDiaSemana()">
+<body onload="carregaDiaSemana(), carregaPedidos()">
 
     <header>
         <a href="#">
@@ -52,7 +52,7 @@
             <div class="navbar--login">
                 <a href="#" onclick="abreFechaModal()">
                     <i class="fas fa-shopping-cart carrinho">
-                        <span class="notificacao">1</span>
+                        <span class="notificacao" id="notificacao">0</span>
                     </i>
                 </a>
                 <a href="cadastro.html">
@@ -113,7 +113,7 @@
             <div class="dia" data-dia="sexta" onclick="alteraBtnDiaSemana(this)">
                 Sexta
             </div>
-            <div class="dia" data-dia="bebidas" onclick="alteraBtnDiaSemana(this)">
+            <div class="dia" data-dia="bebida" onclick="alteraBtnDiaSemana(this)">
                 Bebidas
             </div>
         </div>
@@ -386,6 +386,10 @@
 
     <script src="js/btn-mobile.js"></script>
 
+    <script src="js/cardapio.js"></script>
+
+    <script src="js/carrinho.js"></script>
+
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 
     <script type="text/javascript" src="JS/popper.min.js"></script>
@@ -393,10 +397,6 @@
     <script type="text/javascript" src="JS/bootstrap.js"></script>
 
     <script type="text/javascript" src="JS/app.js"></script>
-
-    <script src="js/cardapio.js"></script>
-
-    <script src="js/carrinho.js"></script>
 
 </body>
 </html>
