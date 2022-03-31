@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/default.css">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="css/cardapio.css">
+
+    <link rel="stylesheet" href="css/carrinho.css">
+
+    <link rel="stylesheet" href="css/sobre.css">
+
+    <title>Projeto Integrador</title>
+</head>
+
+<body onload="carregaDiaSemana(), carregaPedidos()">
+
+    <header>
+        <a href="#" >
+            <div class="logo"><i class="fas fa-utensils"></i></div>
+        </a>
+        <button class="navbar--btnMobile" id="navbar--btnMobile">
+            <span class="btnMobile--icon"></span>
+        </button>
+        <nav class="navbar" id="navbar">
+            <div class="navbar--links">
+                <a href="#home" class="animateLink">
+                    <div class="link active">Home<span class="link--linha"></span></div>
+                </a>
+                <a href="#cardapio" class="animateLink">
+                    <div class="link">Cardápio<span class="link--linha"></span></div>
+                </a>
+                <a href="#sobre" class="animateLink">
+                    <div class="link">Sobre<span class="link--linha"></span></div>
+                </a>
+                <a href="#contato" class="animateLink">
+                    <div class="link">Contato<span class="link--linha"></span></div>
+                </a>
+            </div>
+
+            <div class="navbar--login">
+                <a href="#" onclick="abreFechaModal()">
+                    <i class="fas fa-shopping-cart carrinho">
+                        <span class="notificacao" id="notificacao">0</span>
+                    </i>
+                </a>
+                <a href="cadastro.html">
+                    <div class="link cadastro">Cadastre-se<span class="link--linha"></span></div>
+                </a>
+                <a href="login.html">
+                    <div class="login">Login</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="modalCarrinho" id="modalCarrinho">
+        <button class="btnFechar" onclick="abreFechaModal()">&times;</button>
+        <i class="fas fa-shopping-cart"></i>
+        <div class="pedidos" id="pedidos">
+            
+        </div>
+        <div class="subtotal" id="subtotal"><strong>Subtotal:</strong> R$ 0</div>
+        <span></span>
+        <button class="btnPedido">Fechar Pedido</button>
+    </div>
+
+    <section class="home" id="home">
+        <div class="home--text">
+            <span><i class="fas fa-hamburger"></i> Sua melhor comida é aqui na</span>
+            <h1>Confeitaria do Senac</h1>
+            <p>Projeto desenvolvido pelos alunos do curso de desenvolvimento de software para a cantina do Senac</p>
+            <div>
+                <a href="#cardapio" class="btnComprarAgora animateLink">Comprar agora</a>
+                <a href="#cardapio" class="btnVerCardapio animateLink">Ver Cardápio</a>
+            </div>
+        </div>
+        <div class="home--img">
+            <img src="images/comidaTeste2.png" alt="img">
+        </div>
+    </section>
+
+    <section class="cardapio" id="cardapio">
+        <div class="headerTitle">
+            <h1 class="title">Cardápio</h1>
+            <span></span>
+        </div>
+
+        <div class="diasSemana" id="diasSemana">
+            <div class="dia activeSemana" data-dia="segunda" onclick="alteraBtnDiaSemana(this)">
+                Segunda
+            </div>
+            <div class="dia" data-dia="terca" onclick="alteraBtnDiaSemana(this)">
+                Terça
+            </div>
+            <div class="dia" data-dia="quarta" onclick="alteraBtnDiaSemana(this)">
+                Quarta
+            </div>
+            <div class="dia" data-dia="quinta" onclick="alteraBtnDiaSemana(this)">
+                Quinta
+            </div>
+            <div class="dia" data-dia="sexta" onclick="alteraBtnDiaSemana(this)">
+                Sexta
+            </div>
+            <div class="dia" data-dia="bebida" onclick="alteraBtnDiaSemana(this)">
+                Bebidas
+            </div>
+        </div>
+
+        <div class="cards" id="cards">
+        
+        </div>
+    
+    </section>
+
+    <section class="info-1" id="sobre">
+        <div class="headerTitle titulo-info-1">
+            <h1 class="title">Sobre Nós</h1>
+            <span></span>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mt-5 p-4 align-self-center">
+                    <div id="carrosel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carrosel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carrosel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carrosel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/turma.jpeg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/turma.jpeg" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/turma.jpeg" class="d-block w-100">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrosel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrosel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 mx-4 p-5 ">
+                    <h2 style="color: var(--cor04); padding-bottom: 10px;">O Senac</h2>
+                    <p>
+                        O Senac
+                        Desde 1946, o Serviço Nacional de Aprendizagem Comercial – Senac é o principal agente de
+                        educação
+                        profissional voltado para o Comércio de Bens, Serviços e Turismo do País.
+                    </p>
+                    <br>
+                    <p>
+                        Hoje, está presente em mais de 1.800 municípios, de Norte a Sul do Brasil, onde mantém
+                        infraestrutura de ponta composta por mais de 600 unidades escolares, empresas pedagógicas e
+                        unidades
+                        móveis.
+                    </p>
+                    <br>
+                    <p>
+                        Seu portfólio contempla cursos presenciais e a distância, em diversas áreas do conhecimento, que
+                        vão
+                        da Formação Inicial e Continuada à Pós-graduação e permitem ao aluno planejar sua carreira
+                        profissional em uma perspectiva de educação continuada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="info-2">
+        <h1 class="titulo-info-2 p-5 m-3">Projeto Integrador</h1>
+
+        <div class="container cardsSobre">
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_marvin.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-teal">Back-End</span>
+                    <h4 class="card-descrition">
+                        Responsável por requisições dos clientes, autenticações, registros e verificações dentro do site.
+                    </h4>
+                    <div class="user mt-2">
+                        <img src="./images/aluno_marvin.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>JD Marvin Destin</h5>
+                            <small>@jdmarvinmael</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_jean.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">Back-End</span>
+                    <h4 class="card-descrition">
+                        Backend das inserções dos trafegos no banco de dados.
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_jean.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>Jean Vitorio</h5>
+                            <small>@focus.up_</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_oliver.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">Front-End</span>
+                    <span class="tag tag-teal mt-1">Back-End</span>
+                    <h4 class="card-descrition">
+                        Implementações direcionadas ao conteúdo visível e interativo ao usuário.
+                    </h4>
+                    <div class="user mt-2">
+                        <img src="images/aluno_oliver.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>Oliver Lohann Mayer</h5>
+                            <small>@oliverzyn</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container cardsSobre">
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_arthur.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-teal">Front-End</span>
+                    <h4 class="card-descrition">
+                        Desenvolvimento da tela de cadastro, login e rodapé
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_arthur.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>Arthur Nodachetko</h5>
+                            <small>@arthurnedochetko</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_joao-vitor.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">Banco de Dados</span>
+                    <h4 class="card-descrition">
+                        Apresentação de banco de dados                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_joao-vitor.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>João Vitor Barbosa</h5>
+                            <small>@</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluna_heloisa.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">Análise</span>
+                    <h4 class="card-descrition">
+                        Análise, documentação e planejamento de implementações dentro do site.                    </h4>
+                    <div class="user">
+                        <img src="images/aluna_heloisa.jpeg" />
+                        <div class="user-info">
+                            <h5>Heloisa Hreneczen</h5>
+                            <small>@heloisa_hreneczen</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container cardsSobre">
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_alan.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-orange">Análise</span>
+                    <h4 class="card-descrition">
+                        Análise e alterações no front-end
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_alan.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>Alan Boesing</h5>
+                            <small>@alan_boesing01</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluno_joao-pedro.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">Banco de Dados</span>
+                    <h4 class="card-descrition">
+                        De maneira sucinta eu faço parte do banco de dados
+                    </h4>
+                    <div class="user">
+                        <img src="./images/aluno_joao-pedro.jpeg" alt="user" />
+                        <div class="user-info">
+                            <h5>João Pedro Balhan</h5>
+                            <small>@</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSobre">
+                <div class="card-header">
+                    <img src="./images/aluna_giovanna.jpeg" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">Front-End</span>
+                    <span class="tag tag-purple mt-1">Banco de Dados</span>
+                    <h4 class="card-descrition my-1">
+                        Construção da interface do usuário e estruturação do banco de dados
+                    </h4>
+                    <div class="user mt-2">
+                        <img src="images/aluna_giovanna.jpeg" />
+                        <div class="user-info">
+                            <h5>Giovanna Resende</h5>
+                            <small>@gio_lima.13</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <style>
+        footer {
+          text-align: center;
+          padding: 20px;
+          background-color: #fe7c24;
+          color: white;
+        }
+        </style>
+        <footer id="contato">
+            <p>Telefone: (46) 3272-3700<br>
+            <p> Instagram: @senacparana 
+            <p>Endereço: Av. Tupi, 385 - Bortot, Pato Branco - PR, 85504-000 </a> 
+          
+          </footer>
+
+   
+
+    <script>
+        let modal = document.querySelector('#modalCarrinho')
+        function abreFechaModal() {
+            modal.classList.toggle('ativo')
+        }
+    </script>
+
+    <script src="js/btn-mobile.js"></script>
+
+    <script src="js/cardapio.js"></script>
+
+    <script src="js/carrinho.js"></script>
+
+    <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="JS/popper.min.js"></script>
+
+    <script type="text/javascript" src="JS/bootstrap.js"></script>
+
+    <script type="text/javascript" src="JS/app.js"></script>
+
+    <script>
+        var $doc = $("html, body");
+        $(".animateLink").click(function () {
+          $doc.animate(
+            {
+              scrollTop: $($.attr(this, "href")).offset().top,
+            },
+            500
+          );
+          return false;
+        });
+    </script>
+
+</body>
+</html>
