@@ -27,7 +27,7 @@
 <body onload="carregaDiaSemana(), carregaPedidos()">
 
     <header>
-        <a href="#">
+        <a href="#" >
             <div class="logo"><i class="fas fa-utensils"></i></div>
         </a>
         <button class="navbar--btnMobile" id="navbar--btnMobile">
@@ -35,16 +35,16 @@
         </button>
         <nav class="navbar" id="navbar">
             <div class="navbar--links">
-                <a href="#">
+                <a href="#home" class="animateLink">
                     <div class="link active">Home<span class="link--linha"></span></div>
                 </a>
-                <a href="">
+                <a href="#cardapio" class="animateLink">
                     <div class="link">Cardápio<span class="link--linha"></span></div>
                 </a>
-                <a href="sobre.html">
+                <a href="#sobre" class="animateLink">
                     <div class="link">Sobre<span class="link--linha"></span></div>
                 </a>
-                <a href="#">
+                <a href="#contato" class="animateLink">
                     <div class="link">Contato<span class="link--linha"></span></div>
                 </a>
             </div>
@@ -78,12 +78,12 @@
 
     <section class="home" id="home">
         <div class="home--text">
-            <span><i class="fas fa-hamburger"></i> Frase de efeito</span>
-            <h1>Cantina do Senac</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error voluptatum.</p>
+            <span><i class="fas fa-hamburger"></i> Sua melhor comida é aqui na</span>
+            <h1>Confeitaria do Senac</h1>
+            <p>Projeto desenvolvido pelos alunos do curso de desenvolvimento de software para a cantina do Senac</p>
             <div>
-                <a href="#" class="btnComprarAgora">Comprar agora</a>
-                <a href="#" class="btnVerCardapio">Ver Cardápio</a>
+                <a href="#cardapio" class="btnComprarAgora animateLink">Comprar agora</a>
+                <a href="#cardapio" class="btnVerCardapio animateLink">Ver Cardápio</a>
             </div>
         </div>
         <div class="home--img">
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    <section class="cardapio">
+    <section class="cardapio" id="cardapio">
         <div class="headerTitle">
             <h1 class="title">Cardápio</h1>
             <span></span>
@@ -124,7 +124,7 @@
     
     </section>
 
-    <section class="info-1">
+    <section class="info-1" id="sobre">
         <div class="headerTitle titulo-info-1">
             <h1 class="title">Sobre Nós</h1>
             <span></span>
@@ -377,14 +377,14 @@
     <style>
         footer {
           text-align: center;
-          padding: 3px;
+          padding: 20px;
           background-color: #fe7c24;
           color: white;
         }
         </style>
-        <footer>
+        <footer id="contato">
             <p>Telefone: (46) 3272-3700<br>
-            <p> Instagram: senacparana 
+            <p> Instagram: @senacparana 
             <p>Endereço: Av. Tupi, 385 - Bortot, Pato Branco - PR, 85504-000 </a> 
           
           </footer>
@@ -406,11 +406,26 @@
 
     <script type="text/javascript" src="JS/jquery-3.3.1.slim.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script type="text/javascript" src="JS/popper.min.js"></script>
 
     <script type="text/javascript" src="JS/bootstrap.js"></script>
 
     <script type="text/javascript" src="JS/app.js"></script>
+
+    <script>
+        var $doc = $("html, body");
+        $(".animateLink").click(function () {
+          $doc.animate(
+            {
+              scrollTop: $($.attr(this, "href")).offset().top,
+            },
+            500
+          );
+          return false;
+        });
+    </script>
 
 </body>
 </html>

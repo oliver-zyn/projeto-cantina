@@ -1,4 +1,4 @@
-let comidas = [
+/* let comidas = [
     {
         _id: "623cc9ff32e3af7ca656fff0",
 		nome: "Mini Pizza",
@@ -107,9 +107,158 @@ let comidas = [
 		descricao: "200g",
         diaSemana: null
     }
+] */
+
+
+
+let comidas = [
+    {
+        "_id": "6245cd054c41f3195ff0f637",
+        "nome": "Água Mineral",
+        "tipoProduto": "bebida",
+        "preco": 2.5,
+        "imagem": "../images/agua.jpg",
+        "diaSemana": null,
+        "descricao": "500ml",
+        "__v": 0
+    },
+    {
+        "_id": "6245cd744c41f3195ff0f639",
+        "nome": "Fanta Laranja",
+        "tipoProduto": "bebida",
+        "preco": 3.5,
+        "imagem": "../images/fanta.jpg",
+        "diaSemana": null,
+        "descricao": "350ml",
+        "__v": 0
+    },
+    {
+        "_id": "6245cdd74c41f3195ff0f63b",
+        "nome": "Coca-Cola",
+        "tipoProduto": "bebida",
+        "preco": 3.5,
+        "imagem": "../images/coca.jpg",
+        "diaSemana": null,
+        "descricao": "350ml",
+        "__v": 0
+    },
+    {
+        "_id": "6245ce764c41f3195ff0f63d",
+        "nome": "Suco de Uva",
+        "tipoProduto": "bebida",
+        "preco": 3,
+        "imagem": "../images/sucoUva.jpg",
+        "diaSemana": null,
+        "descricao": "290ml",
+        "__v": 0
+    },
+    {
+        "_id": "6245d3e04c41f3195ff0f63f",
+        "nome": "Suco de Laranja",
+        "tipoProduto": "bebida",
+        "preco": 3,
+        "imagem": "../images/sucoLaranja.jpg",
+        "diaSemana": null,
+        "descricao": "290ml",
+        "__v": 0
+    },
+    {
+        "_id": "6245e123d954badd5f1c8476",
+        "nome": "Pão de Queijo",
+        "tipoProduto": "comida",
+        "preco": 1.5,
+        "imagem": "../images/paoDeQueijo.jpg",
+        "diaSemana": "segunda",
+        "descricao": "50g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e22a61c46cc8c9eab8a6",
+        "nome": "Mini-Pizza",
+        "tipoProduto": "comida",
+        "preco": 5,
+        "imagem": "../images/miniPizza.jpg",
+        "diaSemana": "terca",
+        "descricao": "200g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e28361c46cc8c9eab8a8",
+        "nome": "Bolo Nega Maluca",
+        "tipoProduto": "comida",
+        "preco": 5,
+        "imagem": "../images/bolo.jpg",
+        "diaSemana": "quarta",
+        "descricao": "200g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e2e161c46cc8c9eab8aa",
+        "nome": "Cheesecake",
+        "tipoProduto": "comida",
+        "preco": 6,
+        "imagem": "../images/cheesecake.jpg",
+        "diaSemana": "terca",
+        "descricao": "170g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e3ca61c46cc8c9eab8ac",
+        "nome": "Brigadeiro",
+        "tipoProduto": "comida",
+        "preco": 2,
+        "imagem": "../images/brigadeiro.jpg",
+        "diaSemana": "quinta",
+        "descricao": "40g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e46c61c46cc8c9eab8ae",
+        "nome": "Beijinho",
+        "tipoProduto": "comida",
+        "preco": 2,
+        "imagem": "../images/beijinho.jpg",
+        "diaSemana": "quinta",
+        "descricao": "40g",
+        "__v": 0
+    },
+    {
+        "_id": "6245e54e61c46cc8c9eab8b0",
+        "nome": "Panqueca",
+        "tipoProduto": "comida",
+        "preco": 6,
+        "imagem": "../images/panqueca.jpg",
+        "diaSemana": "terca",
+        "descricao": "170g",
+        "__v": 0
+    },
+    {
+        "_id": "6245ecac7e1e256134010453",
+        "nome": "Bolo Nega Maluca",
+        "tipoProduto": "comida",
+        "preco": 5,
+        "imagem": "../images/bolo.jpg",
+        "diaSemana": "sexta",
+        "descricao": "200g",
+        "__v": 0
+    }
 ]
 
 //#region Tarefas Iniciais
+
+/* async function carregaProdutos() {
+    await fetch('http://localhost:3000/produtos').then(res => {
+        res.json().then(json => {
+            json.forEach(produto => {
+                comidas.push(produto)
+            })
+        })
+    }).catch(error => {
+        console.log(error);
+    })
+
+    carregaDiaSemana()
+} */
 
 function carregaDiaSemana() {
     let semana = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"]
@@ -166,7 +315,7 @@ function atualizaCards(diaSemana, bVerificaBebida) {
         ` 
         <div class="card">
             <div class="cardImg">
-                <img src=${item.imagem} alt="">
+                <img src=${item.imagem} alt="imgProduto">
             </div>
             <div class="cardBody">
                 <h3>${item.nome}</h3>

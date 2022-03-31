@@ -3,7 +3,6 @@ let pedidos = []
 //#region Tarefas Iniciais
 
 function carregaPedidos() {
-    localStorage.clear()
     let pedidosStorage = JSON.parse(localStorage.getItem('pedidosCarrinho'))
 
     if (!pedidosStorage) {
@@ -74,7 +73,6 @@ function atualizaCarrinho() {
 
     atualizaNotificacao()
     atualizaSubTotal()
-    gravaPedidos()
 }
 
 function atualizaContador(idProduto) {
@@ -117,6 +115,7 @@ function atualizaSubTotal() {
     })
 
     tagSubTotal.innerHTML = `<strong>Subtotal:</strong> R$ ${subtotal}`
+    gravaPedidos()
 }
 
 function atualizaNotificacao() {
