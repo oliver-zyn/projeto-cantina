@@ -1,7 +1,8 @@
 .cardapio {
     height: auto;
     width: 100%;
-    padding-top: 50px;
+    max-width: 1400px;
+    margin: auto;
     padding: 50px 8%;
 }
 
@@ -33,7 +34,7 @@
 .dia.activeSemana {
     border: none;
     background: linear-gradient(45deg, var(--cor02), var(--cor03));
-    color: var(--cor01);
+    color: var(--cor05);
     box-shadow:  4px 4px 8px #c5c5c5bd,
     -4px -4px 8px #ffffff;
 
@@ -134,7 +135,7 @@
 
 .btnComprar {
     background: var(--cor02);
-    color: var(--cor01);
+    color: var(--cor05);
     margin-top: 15px;
     padding: 7px 15px;
     box-shadow:  4px 4px 8px #c5c5c5bd,

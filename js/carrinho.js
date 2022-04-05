@@ -1,18 +1,18 @@
-let pedidos = []
+let pedidos = [];
 
 //#region Tarefas Iniciais
 
 function carregaPedidos() {
-    let pedidosStorage = JSON.parse(localStorage.getItem('pedidosCarrinho'))
+  let pedidosStorage = JSON.parse(localStorage.getItem("pedidosCarrinho"));
 
-    if (!pedidosStorage) {
-        return;
-    } else {
-        for(let item of pedidosStorage) {
-            pedidos.push(item)
-        }
-        atualizaCarrinho()
+  if (!pedidosStorage) {
+    return;
+  } else {
+    for (let item of pedidosStorage) {
+      pedidos.push(item);
     }
+    atualizaCarrinho();
+  }
 }
 
 //#endregion
@@ -20,47 +20,61 @@ function carregaPedidos() {
 //#region Eventos
 
 function addCarrinho(id, nome, preco, imagem) {
+  let { valorContador } = dadosContador(id);
 
-    let {valorContador} = dadosContador(id)
+  let idProduto = "b" + id;
 
-    let idProduto = 'b' + id
+  for (let i = 0; i < valorContador; i++) {
+    let pedidoExiste = buscaProduto(idProduto);
 
-    for(let i = 0; i < valorContador; i++) {
-        let pedidoExiste = buscaProduto(idProduto)
-
-        if (!pedidoExiste) {
-            pedidos.push({idProduto, nome, preco, imagem, quantidade: valorContador})
-            atualizaCarrinho()
-            break
-        } else {
-            atualizaContador(idProduto)
-            break
-        }
+    if (!pedidoExiste) {
+      pedidos.push({
+        idProduto,
+        nome,
+        preco,
+        imagem,
+        quantidade: valorContador,
+      });
+      atualizaCarrinho();
+      break;
+    } else {
+      atualizaContador(idProduto);
+      break;
     }
+  }
 }
 
-
 function buscaProduto(idProduto) {
-    let produto = pedidos.find(item => item.idProduto == idProduto)
+  let produto = pedidos.find((item) => item.idProduto == idProduto);
 
-    return produto
+  return produto;
 }
 
 function atualizaCarrinho() {
-    let tagPedidos = document.querySelector('#pedidos');
-    tagPedidos.innerHTML = ""
+  let tagPedidos = document.querySelector("#pedidos");
+  tagPedidos.innerHTML = "";
 
-    pedidos.forEach(pedido => {
-        tagPedidos.innerHTML += `
+  pedidos.forEach((pedido) => {
+    tagPedidos.innerHTML += `
                                 <div class="pedido">
                                 <div class="quantidade pedido--quantidade">
-                                    <button onclick="decrementClick('${pedido.idProduto}', true)">-</button>
-                                    <p id="${pedido.idProduto}" class="num-contador-pedido" data-contador=${pedido.quantidade}>${pedido.quantidade}</p>
-                                    <button onclick="incrementClick('${pedido.idProduto}', true)">+</button>
+                                    <button onclick="decrementClick('${
+                                      pedido.idProduto
+                                    }', true)">-</button>
+                                    <p id="${
+                                      pedido.idProduto
+                                    }" class="num-contador-pedido" data-contador=${
+      pedido.quantidade
+    }>${pedido.quantidade}</p>
+                                    <button onclick="incrementClick('${
+                                      pedido.idProduto
+                                    }', true)">+</button>
                                 </div>
                                     <div class="pedido--item">
                                         <div class="pedido--img">
-                                            <img src=${pedido.imagem} alt=${pedido.nome}>
+                                            <img src=${pedido.imagem} alt=${
+      pedido.nome
+    }>
                                         </div>
                                         <div class="pedido--texto">
                                             <h2>${pedido.nome}</h2>
@@ -68,64 +82,75 @@ function atualizaCarrinho() {
                                         </div>
                                     </div>
                                 </div>
-                                `
-    })
+                                `;
+  });
 
-    atualizaNotificacao()
-    atualizaSubTotal()
+  atualizaNotificacao();
+  atualizaSubTotal();
 }
 
 function atualizaContador(idProduto) {
-    let {valorContador} = dadosContador(idProduto.replace(/^./, ""))
-    let {tagContador} = dadosContador(idProduto)
+  let { valorContador } = dadosContador(idProduto.replace(/^./, ""));
+  let { tagContador } = dadosContador(idProduto);
 
-    atualizaQtdItensCarrinho(idProduto, tagContador, valorContador)
-    
-    atualizaSubTotal()
+  atualizaQtdItensCarrinho(idProduto, tagContador, valorContador);
 
+  atualizaSubTotal();
 }
 
 function atualizaQtdItensCarrinho(idProduto, tagContador, valorContador) {
-    let indexPedidos = pedidos.findIndex(pedido => {
-        return pedido.idProduto === idProduto
-    })
+  let indexPedidos = pedidos.findIndex((pedido) => {
+    return pedido.idProduto === idProduto;
+  });
 
-    pedidos[indexPedidos].quantidade = valorContador
+  if (!pedidos[indexPedidos]) {
+    return;
+  }
 
-    updateDisplay(tagContador, pedidos[indexPedidos].quantidade)
+  pedidos[indexPedidos].quantidade = valorContador;
+
+  updateDisplay(tagContador, pedidos[indexPedidos].quantidade);
 }
 
 function removeCarrinho(idProduto) {
-    for (let indice in pedidos) {
-        let pedido = pedidos[indice];
-        if (pedido.idProduto == idProduto) {
-            pedidos.splice(indice, 1)
+  for (let indice in pedidos) {
+    let pedido = pedidos[indice];
+    if (pedido.idProduto == idProduto) {
+      pedidos.splice(indice, 1);
 
-            atualizaCarrinho()
-        }
+      atualizaCarrinho();
     }
+  }
 }
 
 function atualizaSubTotal() {
-    let tagSubTotal = document.querySelector('#subtotal')
-    let subtotal = 0
+  let tagSubTotal = document.querySelector("#subtotal");
+  let subtotal = 0;
 
-    pedidos.forEach(pedido => {
-        subtotal += pedido.preco * pedido.quantidade
-    })
+  pedidos.forEach((pedido) => {
+    subtotal += pedido.preco * pedido.quantidade;
+  });
 
-    tagSubTotal.innerHTML = `<strong>Subtotal:</strong> R$ ${subtotal}`
-    gravaPedidos()
+  tagSubTotal.innerHTML = `<strong>Subtotal:</strong> R$ ${subtotal}`;
+  gravaPedidos();
 }
 
 function atualizaNotificacao() {
-    let notf = document.querySelector('#notificacao')
+  let notf = document.querySelector("#notificacao");
 
-    notf.innerHTML = pedidos.length
+  notf.innerHTML = pedidos.length;
 }
 
 function gravaPedidos() {
-    localStorage.setItem('pedidosCarrinho', JSON.stringify(pedidos))
+  localStorage.setItem("pedidosCarrinho", JSON.stringify(pedidos));
+}
+
+function enviaPedido() {
+  if (pedidos.length == 0) {
+    alert("Seu carrinho está vazio!");
+  } else {
+    alert("Pedido enviado com sucesso!");
+  }
 }
 
 //#endregion

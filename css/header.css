@@ -6,8 +6,10 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
+    max-width: 1400px;
     padding: 15px 100px 10px 100px;
     z-index: 999;
+    margin: auto;
     background: #fafafdcb;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(5px);
