@@ -8,7 +8,7 @@ O projeto foi desenvolvido pelos alunos do curso de desenvolvimento de software 
 
 A aplicação consiste em uma página de vendas dos produtos disponíveis na cantina do senac (apenas frontend).
 
-Aplicação em produção: https://feednac.netlify.app
+Aplicação em produção: https://oliver-zyn.github.io/projeto-cantina/
 
 ## 💻 Tecnologias utilizadas
 
