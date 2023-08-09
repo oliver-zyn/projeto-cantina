@@ -1,66 +1,52 @@
-## Projeto Integrador Cantina
+# Cantina Senac
 
-Grupos:
+<img src="https://github.com/oliver-zyn/projeto-cantina/assets/89222905/fee67b8b-25f1-4d78-8ff5-22125bc02789" width="600" />
 
-- Front-End:
-    - Oliver
-    - Giovanna
-    - Bryam
-    - Arthur
+## 📖 Sobre
 
-- Back-End:
-    - Jean
-    - Marvin
+O projeto foi desenvolvido pelos alunos do curso de desenvolvimento de software para a cantina do Senac.
 
-- Análise:
-    - Heloísa
-    - Alan
-    - Kethylin
+A aplicação consiste em uma página de vendas dos produtos disponíveis na cantina do senac (apenas frontend).
 
-- Database:
-    - João P.
-    - João V.
-    - Oliver
-    - Giovanna
+Aplicação em produção: https://feednac.netlify.app
 
-Sistema de versionamento:
+## 💻 Tecnologias utilizadas
 
-- Github
+- HTML / CSS
+- JavaScript
+- Bootstrap
+- Font Awesome
 
-Padrão:
+## ⚒️ Features
 
-- Português
-- camelCase
+- Listagem de produtos disponíveis, separados por dia da semana
+- Adição de itens no carrinho de compras
+- Login e cadastro de usuários (apenas visual)
 
-Ferramentas / Linguagens:
+## 🙂 Participantes
 
-- VS Code
-- PyCharm
-- PgAdmin / SQL
-- HTML/CSS
-- JAVASCRIPT
-- BOOTSTRAP
-- DJANGO
+- Arthur
+- Bryam
+- Giovanna
+- Heloísa
+- Jean
+- João P.
+- João V.
+- Marvin
+- Oliver
 
-Extensões para VS Code:
+## ⚙️ Executando o projeto
 
-- Prettier - Code formatter
-- Bracket Pair Colorizer
-- vscode-icons
-- Dracula Official
-- Live Server
-- Node.js Exec
+Primeiramente, deve-se instalar todas as dependências:
+```
+npm install
+```
 
-Material de Apoio:
-
-- https://dribbble.com/shots/15023919-Restaurant-Web-UI-Design-Exploration
-- https://dribbble.com/shots/16187552-Madang-Food-Landing-Page
-- https://cssbuttons.io/
-
-Paleta de cores:
-
-- #F8FEF9
-- #FF6D21
-- #FA9529
-- #233545
-- #E6F9E7
+Rodando o projeto:
+```
+npm run dev
+```
+Realizando build:
+```
+npm run build
+```
